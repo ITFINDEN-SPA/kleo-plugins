@@ -25,12 +25,25 @@ echo "== 1/5 Xcode Command Line Tools (necesarias para git/compilar) =="
 if xcode-select -p >/dev/null 2>&1; then
   echo "  ✅ Ya instaladas: $(xcode-select -p)"
 else
-  echo "  Instalando... se abrirá un diálogo — pulsa INSTALAR y espera."
-  echo "  (Si el diálogo no aparece, ejecuta manualmente: xcode-select --install)"
-  xcode-select --install >/dev/null 2>&1 || true
+  echo "  Instalando Command Line Tools (método sin diálogo)..."
+  echo "  ⚠️  Si se pide contraseña de administrador, escríbela."
+
+  # Método 1: softwareupdate headless (no requiere diálogo GUI)
+  # Evita el diálogo que a veces no aparece en sesiones remotas.
+  touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress 2>/dev/null || true
+  CLT_PRODUCT=$(softwareupdate --list 2>/dev/null | grep -i "Command Line Tools" | tail -1 | sed -E 's/^[[:space:]]*\*[[:space:]]*//' | sed 's/^Label: //')
+  if [ -n "$CLT_PRODUCT" ]; then
+    echo "  Producto detectado: $CLT_PRODUCT"
+    sudo softwareupdate --install "$CLT_PRODUCT" --agree-to-license --verbose 2>&1 | tail -5 || true
+  else
+    echo "  (producto no listado por softwareupdate — usando xcode-select)"
+    sudo xcode-select --install 2>&1 | head -3 || true
+  fi
+  rm -f /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+
   # esperar a que termine la instalación
   echo "  Esperando a que termine la instalación de CLT..."
-  for i in $(seq 1 60); do
+  for i in $(seq 1 72); do
     if xcode-select -p >/dev/null 2>&1; then
       echo "  ✅ Listo: $(xcode-select -p)"
       break
@@ -38,9 +51,11 @@ else
     sleep 5
   done
   if ! xcode-select -p >/dev/null 2>&1; then
-    echo "  ⚠️  Las CLT no terminaron de instalarse. Ejecuta manualmente:"
-    echo "      sudo xcode-select --switch /Library/Developer/CommandLineTools"
-    echo "  y vuelve a correr este script."
+    echo ""
+    echo "  ⚠️  Las CLT aún no están listas. Copia y ejecuta MANUALMENTE estos 2 comandos:"
+    echo "      sudo xcode-select --install"
+    echo "      # cuando termine (2-5 min), verifica con: xcode-select -p"
+    echo "  Luego vuelve a correr: bash ~/bootstrap-mac.sh"
     exit 1
   fi
 fi
