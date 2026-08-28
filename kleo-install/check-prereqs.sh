@@ -57,7 +57,7 @@ check "5. Autenticación GitHub (itfinden)" \
   "cuenta: itfinden; luego: gh auth setup-git"
 
 check "6. git credential helper (token HTTPS)" \
-  "git config --global credential.helper 2>/dev/null | grep -qE 'gh|osxkeychain|manager'" \
+  "git config --global credential.helper 2>/dev/null | grep -qE 'gh|osxkeychain|manager|store'" \
   "gh auth setup-git" \
   "tras autenticar con gh"
 
@@ -75,6 +75,11 @@ check "9. Acceso red a GitHub" \
   "curl -fsSI --max-time 8 https://github.com >/dev/null" \
   "revisar conexión / VPN / proxy" \
   ""
+
+check "10. Acceso al harness privado (itfinden/KLEO-Hardness)" \
+  "git ls-remote https://github.com/itfinden/KLEO-Hardness.git HEAD >/dev/null 2>&1" \
+  "gh auth login   (como itfinden, o pedir acceso a itfinden: repos → Settings → Collaborators)" \
+  "el repo es PRIVADO; tu cuenta debe estar invitada"
 
 echo ""
 echo "════════════════════════════════════════════════════════"
