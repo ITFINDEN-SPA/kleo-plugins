@@ -1,5 +1,0 @@
-id	status	title	assignee	prio	scope	created
-1	hecho	Inicializar git en 10 subsistemas	kleo-macbook	alta	~/home/puntobot*	2026-08-28
-2	pendiente	Corregir APP_DEBUG en QA		media	.env	2026-08-28
-3	pendiente	Conectar n8n con API puntobot	kleo-macmini	media		2026-08-28
-9	pendiente	tarea desde macmini	kleo-macmini	media	—	2026-08-28
