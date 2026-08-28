@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+# kleo-install — Instalación central del ecosistema Kleo desde GitHub
+#
+# GitHub es la CENTRAL DE INSTALACIÓN: cualquier Mac (MacBook Pro, Mac mini,
+# MacBook Air, futuros) instala/actualiza el ecosistema completo con este script.
+#
+# Fuentes:
+#   Harness:  https://github.com/itfinden/KLEO-Hardness  (el fork propio de Kleo)
+#   Plugins:  https://github.com/ITFINDEN-SPA/kleo-plugins (central de plugins)
+#
+# Uso: ./kleo-install [--dir DIR] [--branch RAMA] [--install-deps] [--check]
+#   --dir DIR        dónde instalar (default ~/home/AI-STORE/KSH/KLEO_HARNESS)
+#   --branch RAMA    branch del harness (default: fork/kleo-rebrand)
+#   --install-deps   ejecutar pnpm install tras clonar (primera vez)
+#   --check          solo comprobar estado (sin clonar/actualizar)
+set -euo pipefail
+
+HARNESS_REPO="https://github.com/itfinden/KLEO-Hardness.git"
+PLUGINS_REPO="https://github.com/ITFINDEN-SPA/kleo-plugins.git"
+MCP_REPO="https://github.com/ITFINDEN-SPA/kleo-mcp-whmcs.git"
+DEFAULT_DIR="$HOME/home/AI-STORE/KSH/KLEO_HARNESS"
+BRANCH="fork/kleo-rebrand"
+
+DIR="$DEFAULT_DIR"; INSTALL_DEPS=0; CHECK=0
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --dir) DIR="$2"; shift 2;;
+    --branch) BRANCH="$2"; shift 2;;
+    --install-deps) INSTALL_DEPS=1; shift;;
+    --check) CHECK=1; shift;;
+    *) echo "Arg desconocido: $1"; exit 1;;
+  esac
+done
+
+echo "════════════════════════════════════════════"
+echo "  kleo-install — Central de instalación (GitHub)"
+echo "  Harness: $HARNESS_REPO [$BRANCH]"
+echo "  Plugins: $PLUGINS_REPO"
+echo "  MCP:     $MCP_REPO"
+echo "════════════════════════════════════════════"
+
+if [ "$CHECK" = "1" ]; then
+  echo "== Comprobando estado =="
+  if [ -d "$DIR/.git" ]; then
+    echo "  Harness: presente en $DIR"
+    git -C "$DIR" fetch origin "$BRANCH" --quiet 2>/dev/null || true
+    git -C "$DIR" status -sb | head -1 | sed 's/^/    /'
+    echo "  Último commit: $(git -C "$DIR" log --oneline -1 2>/dev/null | sed 's/^/    /')"
+  else
+    echo "  Harness: NO instalado en $DIR"
+  fi
+  if [ -d "$DIR/plugins/.git" ]; then
+    echo "  Plugins: presente"
+    git -C "$DIR/plugins" fetch origin --quiet 2>/dev/null || true
+    echo "  Último commit: $(git -C "$DIR/plugins" log --oneline -1 2>/dev/null | sed 's/^/    /')"
+  else
+    echo "  Plugins: NO instalados"
+  fi
+  if [ -d "$DIR/kleo-mcp-whmcs/.git" ]; then
+    echo "  MCP-WHMCS: presente"
+  else
+    echo "  MCP-WHMCS: NO instalado"
+  fi
+  exit 0
+fi
+
+echo "== 1/4 Harness =="
+if [ -d "$DIR/.git" ]; then
+  echo "  Ya existe — actualizando (git pull)..."
+  git -C "$DIR" fetch origin "$BRANCH" 2>&1 | tail -1 || true
+  git -C "$DIR" checkout "$BRANCH" 2>&1 | tail -1 || true
+  git -C "$DIR" pull origin "$BRANCH" 2>&1 | tail -2
+else
+  echo "  Clonando harness ($BRANCH)..."
+  mkdir -p "$(dirname "$DIR")"
+  git clone --branch "$BRANCH" --single-branch "$HARNESS_REPO" "$DIR" 2>&1 | tail -2
+fi
+
+echo "== 2/4 Plugins =="
+if [ -d "$DIR/plugins/.git" ]; then
+  echo "  Plugins ya presentes — actualizando..."
+  git -C "$DIR/plugins" pull origin main 2>&1 | tail -2
+else
+  echo "  Clonando central de plugins..."
+  git clone "$PLUGINS_REPO" "$DIR/plugins" 2>&1 | tail -2
+fi
+
+echo "== 3/4 Conector MCP-WHMCS =="
+if [ -d "$DIR/kleo-mcp-whmcs/.git" ]; then
+  echo "  MCP-WHMCS presente — actualizando..."
+  git -C "$DIR/kleo-mcp-whmcs" pull origin master 2>&1 | tail -1 || true
+else
+  echo "  Clonando conector MCP-WHMCS..."
+  git clone "$MCP_REPO" "$DIR/kleo-mcp-whmcs" 2>&1 | tail -1 || true
+fi
+
+echo "== 4/4 Toolchain =="
+for tool in node php git gh; do
+  if command -v "$tool" >/dev/null 2>&1; then
+    echo "  ✅ $tool: $(command -v "$tool")"
+  else
+    echo "  ⚠️  $tool NO encontrado"
+    if [ "$tool" = "php" ] && [ -x /opt/homebrew/bin/php ]; then
+      mkdir -p ~/.local/bin && ln -sf /opt/homebrew/bin/php ~/.local/bin/php
+      echo "     (php enlazado desde Homebrew a ~/.local/bin/php)"
+    fi
+  fi
+done
+
+echo "== 5/5 Verificación =="
+echo "  Harness: $(ls "$DIR" | wc -l | tr -d ' ') entradas"
+if [ -d "$DIR/plugins" ]; then
+  echo "  Plugins: $(ls -d "$DIR"/plugins/kleo-* 2>/dev/null | wc -l | tr -d ' ') de la suite:"
+  ls -d "$DIR"/plugins/kleo-* 2>/dev/null | xargs -n1 basename | sed 's/^/     /'
+fi
+[ -d "$DIR/kleo-mcp-whmcs" ] && echo "  MCP-WHMCS: $(ls "$DIR/kleo-mcp-whmcs/src" 2>/dev/null | wc -l | tr -d ' ') fuentes en src/"
+
+if [ "$INSTALL_DEPS" = "1" ]; then
+  echo "== Instalando dependencias (pnpm install) =="
+  if command -v pnpm >/dev/null 2>&1; then
+    (cd "$DIR" && pnpm install --prefer-offline 2>&1 | tail -3)
+  else
+    echo "  ⚠️  pnpm no encontrado — ejecuta: corepack enable && pnpm install"
+  fi
+fi
+
+echo ""
+echo "✅ kleo-install completado"
+echo "   Verificar estado: $0 --check"
+echo "   Siguiente paso:   $DIR/plugins/kleo-funlib/kleo-funlib stats"
