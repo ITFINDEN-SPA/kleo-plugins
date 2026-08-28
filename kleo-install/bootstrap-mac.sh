@@ -29,12 +29,12 @@ else
   echo "  ⚠️  Si se pide contraseña de administrador, escríbela."
 
   # Método 1: softwareupdate headless (no requiere diálogo GUI)
-  # Evita el diálogo que a veces no aparece en sesiones remotas.
+  # El formato real es:  * Label: Command Line Tools for Xcode-16.2
   touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress 2>/dev/null || true
-  CLT_PRODUCT=$(softwareupdate --list 2>/dev/null | grep -i "Command Line Tools" | tail -1 | sed -E 's/^[[:space:]]*\*[[:space:]]*//' | sed 's/^Label: //')
+  CLT_PRODUCT=$(softwareupdate --list 2>/dev/null | grep -E "Label:.*Command Line" | sed -E 's/^[[:space:]]*\*?[[:space:]]*Label:[[:space:]]*//' | tail -1)
   if [ -n "$CLT_PRODUCT" ]; then
     echo "  Producto detectado: $CLT_PRODUCT"
-    sudo softwareupdate --install "$CLT_PRODUCT" --agree-to-license --verbose 2>&1 | tail -5 || true
+    sudo softwareupdate --install "$CLT_PRODUCT" --agree-to-license 2>&1 | tail -6 || true
   else
     echo "  (producto no listado por softwareupdate — usando xcode-select)"
     sudo xcode-select --install 2>&1 | head -3 || true
