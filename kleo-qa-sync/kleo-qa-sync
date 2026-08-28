@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# kleo-qa-sync — Sincroniza código Dev (MacBook Pro) → QA (Mac mini)
+#
+# Uso: ./kleo-qa-sync <subsistema> [--dry-run]
+#   sincroniza ~/home/<subsistema>/public_html (Dev) → macmini:~/home/<subsistema>/public_html (QA)
+#
+# Excluye: vendor/, node_modules/, .env*, storage/, logs/, backups/
+set -euo pipefail
+
+DEV_ROOT="${DEV_ROOT:-$HOME/home}"
+QA_HOST="${QA_HOST:-mac_mini}"
+QA_ROOT="${QA_ROOT:-/Users/friedrich/home}"
+
+EXCLUDES=(--exclude=vendor --exclude=node_modules --exclude=.env --exclude=.env.* --exclude=storage --exclude=logs --exclude=backups --exclude=.git --exclude=tmp --exclude=mail)
+
+sub="${1:-}"
+shift || true
+dry=""
+for a in "$@"; do [ "$a" = "--dry-run" ] && dry="--dry-run"; done
+
+[ -z "$sub" ] && { echo "Uso: kleo-qa-sync <subsistema> [--dry-run]"; echo "  ej: kleo-qa-sync puntobotcrm --dry-run"; exit 1; }
+
+SRC="$DEV_ROOT/$sub/public_html"
+[ -d "$SRC" ] || { echo "ERROR: no existe $SRC"; exit 1; }
+
+# Asegurar que el destino existe
+ssh -o BatchMode=yes -o ConnectTimeout=10 "$QA_HOST" "mkdir -p $QA_ROOT/$sub/public_html" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq" || true
+
+echo "== kleo-qa-sync: $sub Dev→QA =="
+echo "   $SRC → $QA_HOST:$QA_ROOT/$sub/public_html"
+echo "   Excluye: vendor, node_modules, .env, storage, logs, backups, .git, tmp, mail"
+
+if [ -n "$dry" ]; then
+    rsync -avz --dry-run --delete "${EXCLUDES[@]}" -e ssh "$SRC/" "$QA_HOST:$QA_ROOT/$sub/public_html/" 2>&1 | grep -v "WARNING\|post-quantum" | tail -25
+    echo "[dry-run] No se copió nada."
+    exit 0
+fi
+
+rsync -avz --delete "${EXCLUDES[@]}" -e ssh "$SRC/" "$QA_HOST:$QA_ROOT/$sub/public_html/" 2>&1 | grep -v "WARNING\|post-quantum" | tail -15
+
+echo "== Verificación: hash de un archivo clave =="
+KEYFILE="$(find "$SRC/app" -name '*.php' 2>/dev/null | head -1 | xargs basename 2>/dev/null)"
+local_hash="$(find "$SRC" -name '*.php' -not -path '*/vendor/*' | sort | head -50 | xargs md5 -q 2>/dev/null | md5)"
+remote_hash="$(ssh -o BatchMode=yes -o ConnectTimeout=10 "$QA_HOST" "find $QA_ROOT/$sub/public_html -name '*.php' -not -path '*/vendor/*' | sort | head -50 | xargs md5 -q 2>/dev/null | md5" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq")"
+echo "   local : $local_hash"
+echo "   QA    : $remote_hash"
+[ "$local_hash" = "$remote_hash" ] && echo "   ✅ Sincronizado correctamente" || echo "   ⚠️  Diferencias detectadas (posible archivo nuevo fuera del head -50)"

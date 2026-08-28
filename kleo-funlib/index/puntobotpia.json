@@ -1,0 +1,3903 @@
+{
+    "subsystem": "puntobotpia",
+    "scanned_at": "2026-08-28T13:55:10+00:00",
+    "app_dirs": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app"
+    ],
+    "functions": [
+        {
+            "name": "index",
+            "type": "method",
+            "class": "ChatController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "index(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/ChatController.php",
+            "line": 9
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "ConversacionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiPiaService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiPiaService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiPiaService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/ConversacionController.php",
+            "line": 12
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "ConversacionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View|RedirectResponse",
+            "signature": "index(Request $request): View|RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/ConversacionController.php",
+            "line": 14
+        },
+        {
+            "name": "show",
+            "type": "method",
+            "class": "ConversacionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View|RedirectResponse",
+            "signature": "show(Request $request, string $id): View|RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/ConversacionController.php",
+            "line": 27
+        },
+        {
+            "name": "responder",
+            "type": "method",
+            "class": "ConversacionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "responder(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/ConversacionController.php",
+            "line": 38
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "DashboardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiPiaService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiPiaService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiPiaService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/DashboardController.php",
+            "line": 11
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "DashboardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View|\\Illuminate\\Http\\RedirectResponse",
+            "signature": "index(Request $request): View|\\Illuminate\\Http\\RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/DashboardController.php",
+            "line": 13
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "FlowController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiPiaService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiPiaService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiPiaService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+            "line": 12
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "FlowController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View|RedirectResponse",
+            "signature": "index(Request $request): View|RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+            "line": 14
+        },
+        {
+            "name": "create",
+            "type": "method",
+            "class": "FlowController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "create(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+            "line": 22
+        },
+        {
+            "name": "store",
+            "type": "method",
+            "class": "FlowController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "store(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+            "line": 27
+        },
+        {
+            "name": "show",
+            "type": "method",
+            "class": "FlowController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View|RedirectResponse",
+            "signature": "show(Request $request, string $id): View|RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+            "line": 43
+        },
+        {
+            "name": "edit",
+            "type": "method",
+            "class": "FlowController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View|RedirectResponse",
+            "signature": "edit(Request $request, string $id): View|RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+            "line": 54
+        },
+        {
+            "name": "update",
+            "type": "method",
+            "class": "FlowController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "update(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+            "line": 65
+        },
+        {
+            "name": "show",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "show(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 12
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 83
+        },
+        {
+            "name": "settings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "settings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 13
+        },
+        {
+            "name": "updateSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateSettings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 18
+        },
+        {
+            "name": "ping",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "ping(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 23
+        },
+        {
+            "name": "unlock",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "unlock(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 30
+        },
+        {
+            "name": "online",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "online(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 35
+        },
+        {
+            "name": "revoke",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$jti",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $jti"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "revoke(Request $request, string $jti): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 44
+        },
+        {
+            "name": "globalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "globalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 53
+        },
+        {
+            "name": "updateGlobalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateGlobalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 62
+        },
+        {
+            "name": "proxy",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "proxy(Request $request, string $method, string $endpoint, array $data = []): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 71
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 109
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$sidebar",
+                    "type": "PuntobotSidebarService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly PuntobotSidebarService $sidebar"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(PuntobotSidebarService $sidebar)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 11
+        },
+        {
+            "name": "activeSubsystems",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "activeSubsystems(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 15
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "AuthMiddleware",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/AuthMiddleware.php",
+            "line": 16
+        },
+        {
+            "name": "redirectToLogin",
+            "type": "method",
+            "class": "AuthMiddleware",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "redirectToLogin(Request $request): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/AuthMiddleware.php",
+            "line": 55
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "AuthMiddleware",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/AuthMiddleware.php",
+            "line": 64
+        },
+        {
+            "name": "warmPuntobotSidebar",
+            "type": "method",
+            "class": "WarmsPuntobotSidebar",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmPuntobotSidebar(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+            "line": 10
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "EnsurePuntobotToken",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+            "line": 11
+        },
+        {
+            "name": "authorize",
+            "type": "method",
+            "class": "StoreCategoriaRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "bool",
+            "signature": "authorize(): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Requests/StoreCategoriaRequest.php",
+            "line": 9
+        },
+        {
+            "name": "rules",
+            "type": "method",
+            "class": "StoreCategoriaRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "rules(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Requests/StoreCategoriaRequest.php",
+            "line": 14
+        },
+        {
+            "name": "authorize",
+            "type": "method",
+            "class": "StoreProductoRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "bool",
+            "signature": "authorize(): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Requests/StoreProductoRequest.php",
+            "line": 9
+        },
+        {
+            "name": "rules",
+            "type": "method",
+            "class": "StoreProductoRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "rules(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Requests/StoreProductoRequest.php",
+            "line": 14
+        },
+        {
+            "name": "register",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "register(): void",
+            "summary": "Register any application services.",
+            "doc": "/**\n     * Register any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Providers/AppServiceProvider.php",
+            "line": 12
+        },
+        {
+            "name": "boot",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "boot(): void",
+            "summary": "Bootstrap any application services.",
+            "doc": "/**\n     * Bootstrap any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Providers/AppServiceProvider.php",
+            "line": 20
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": null,
+            "signature": "__construct()",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 13
+        },
+        {
+            "name": "request",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $path"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "request(string $method, string $path, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 18
+        },
+        {
+            "name": "dashboardStats",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "dashboardStats(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 40
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 45
+        },
+        {
+            "name": "flowsIndex",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "flowsIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 64
+        },
+        {
+            "name": "flowShow",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "flowShow(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 69
+        },
+        {
+            "name": "flowStore",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "flowStore(int $companyId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 74
+        },
+        {
+            "name": "flowUpdate",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "flowUpdate(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 79
+        },
+        {
+            "name": "conversationsIndex",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "conversationsIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 85
+        },
+        {
+            "name": "conversationShow",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "conversationShow(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 90
+        },
+        {
+            "name": "conversationReply",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "conversationReply(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 95
+        },
+        {
+            "name": "startSession",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "startSession(int $companyId, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 101
+        },
+        {
+            "name": "sendMessage",
+            "type": "method",
+            "class": "ApiPiaService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$sessionId",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $sessionId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "sendMessage(int $companyId, string $sessionId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+            "line": 106
+        },
+        {
+            "name": "getCurrentUser",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getCurrentUser(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 11
+        },
+        {
+            "name": "productosIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "productosIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 16
+        },
+        {
+            "name": "productoShow",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "productoShow(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 21
+        },
+        {
+            "name": "productoStore",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "productoStore(int $companyId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 26
+        },
+        {
+            "name": "productoUpdate",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "productoUpdate(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 31
+        },
+        {
+            "name": "productoDestroy",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "productoDestroy(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 36
+        },
+        {
+            "name": "ingredientesIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ingredientesIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 41
+        },
+        {
+            "name": "ingredienteShow",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ingredienteShow(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 46
+        },
+        {
+            "name": "ingredienteStore",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ingredienteStore(int $companyId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 51
+        },
+        {
+            "name": "ingredienteUpdate",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ingredienteUpdate(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 56
+        },
+        {
+            "name": "ingredienteDestroy",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ingredienteDestroy(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 61
+        },
+        {
+            "name": "recetasIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "recetasIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 66
+        },
+        {
+            "name": "recetaShow",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "recetaShow(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 71
+        },
+        {
+            "name": "recetaStore",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "recetaStore(int $companyId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 76
+        },
+        {
+            "name": "recetaUpdate",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "recetaUpdate(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 81
+        },
+        {
+            "name": "recetaDestroy",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "recetaDestroy(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 86
+        },
+        {
+            "name": "stockIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "stockIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 91
+        },
+        {
+            "name": "stockCalcular",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "stockCalcular(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 96
+        },
+        {
+            "name": "comprasIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "comprasIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 101
+        },
+        {
+            "name": "compraStore",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "compraStore(int $companyId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 106
+        },
+        {
+            "name": "mesasIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "mesasIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 111
+        },
+        {
+            "name": "mesaStore",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "mesaStore(int $companyId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 116
+        },
+        {
+            "name": "mesaUpdate",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "mesaUpdate(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 121
+        },
+        {
+            "name": "mesaDestroy",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "mesaDestroy(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 126
+        },
+        {
+            "name": "mesaGenerarQr",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "mesaGenerarQr(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 131
+        },
+        {
+            "name": "pedidosIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidosIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 136
+        },
+        {
+            "name": "pedidoShow",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoShow(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 141
+        },
+        {
+            "name": "pedidoStore",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoStore(int $companyId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 146
+        },
+        {
+            "name": "pedidoUpdate",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoUpdate(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 151
+        },
+        {
+            "name": "pedidoDestroy",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoDestroy(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 156
+        },
+        {
+            "name": "pedidoAgregarProducto",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoAgregarProducto(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 161
+        },
+        {
+            "name": "pedidoCerrar",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoCerrar(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 166
+        },
+        {
+            "name": "pedidoCuentas",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$pedidoId",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $pedidoId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoCuentas(int $companyId, string $pedidoId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 171
+        },
+        {
+            "name": "pedidoCuentaStore",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$pedidoId",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $pedidoId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "pedidoCuentaStore(int $companyId, string $pedidoId, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 176
+        },
+        {
+            "name": "cuentaUpdate",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "cuentaUpdate(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 181
+        },
+        {
+            "name": "cuentaPagar",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "cuentaPagar(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 186
+        },
+        {
+            "name": "ordenesCocina",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ordenesCocina(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 191
+        },
+        {
+            "name": "ordenesBar",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ordenesBar(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 196
+        },
+        {
+            "name": "ordenEstado",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "ordenEstado(int $companyId, string $id, string $token, array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 201
+        },
+        {
+            "name": "menuPublicByToken",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$qrToken",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $qrToken"
+                }
+            ],
+            "return_type": "array",
+            "signature": "menuPublicByToken(string $qrToken): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 206
+        },
+        {
+            "name": "menuStartSession",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "menuStartSession(array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 211
+        },
+        {
+            "name": "menuTrack",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "menuTrack(array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 216
+        },
+        {
+            "name": "menuContacto",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                }
+            ],
+            "return_type": "array",
+            "signature": "menuContacto(array $payload): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 221
+        },
+        {
+            "name": "evaluacionesIndex",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "evaluacionesIndex(int $companyId, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 226
+        },
+        {
+            "name": "evaluacionEnviar",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$mesaId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $mesaId"
+                }
+            ],
+            "return_type": "array",
+            "signature": "evaluacionEnviar(int $companyId, string $token, int $mesaId): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 231
+        },
+        {
+            "name": "evaluacionShow",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "evaluacionShow(int $companyId, string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 236
+        },
+        {
+            "name": "request",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "request(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 241
+        },
+        {
+            "name": "url",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "url(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 268
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 276
+        },
+        {
+            "name": "normalizeResponse",
+            "type": "method",
+            "class": "ApiRestoService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "Response",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Response $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeResponse(Response $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+            "line": 294
+        },
+        {
+            "name": "getFromSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "getFromSession(Request $request): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 18
+        },
+        {
+            "name": "warmSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmSession(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 40
+        },
+        {
+            "name": "resolvePayload",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolvePayload(Request $request, string $token): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array{subsistemas: array<int, array<string, mixed>>}|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 59
+        },
+        {
+            "name": "fallbackItems",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "fallbackItems(): array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 82
+        },
+        {
+            "name": "storeInSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$items",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $items"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "void",
+            "signature": "storeInSession(Request $request, array $items, int $companyId): void",
+            "summary": null,
+            "doc": "/**\n     * @param array<int, array<string, mixed>> $items\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 90
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 99
+        },
+        {
+            "name": "fetchFromApi",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "fetchFromApi(string $token, int $companyId): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 109
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 145
+        }
+    ],
+    "classes": [
+        "ChatController",
+        "Controller",
+        "ConversacionController",
+        "DashboardController",
+        "FlowController",
+        "PuntobotSessionContextController",
+        "PuntobotSessionGuardController",
+        "PuntobotSidebarController",
+        "AuthMiddleware",
+        "WarmsPuntobotSidebar",
+        "EnsurePuntobotToken",
+        "StoreCategoriaRequest",
+        "StoreProductoRequest",
+        "AppServiceProvider",
+        "ApiPiaService",
+        "ApiRestoService",
+        "PuntobotSidebarService"
+    ],
+    "routes": [
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/chat",
+            "action": "ChatController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/subsistemas/activos",
+            "action": "\\App\\Http\\Controllers\\PuntobotSidebarController::class, 'activeSubsystems'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/dashboard",
+            "action": "DashboardController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": "FlowController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/crear",
+            "action": "FlowController::class, 'create'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/",
+            "action": "FlowController::class, 'store'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/{id}",
+            "action": "FlowController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/{id}/editar",
+            "action": "FlowController::class, 'edit'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/{id}",
+            "action": "FlowController::class, 'update'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": "ConversacionController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/{id}",
+            "action": "ConversacionController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/{id}/responder",
+            "action": "ConversacionController::class, 'responder'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session-context",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionContextController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'settings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'updateSettings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/ping",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'ping'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/unlock",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'unlock'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/routes/web.php"
+        }
+    ],
+    "files": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/ChatController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/Controller.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/ConversacionController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/DashboardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/FlowController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/AuthMiddleware.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Requests/StoreCategoriaRequest.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Http/Requests/StoreProductoRequest.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Models/Categoria.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Models/Producto.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Models/User.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Providers/AppServiceProvider.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiPiaService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/ApiRestoService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpia/public_html/app/Services/PuntobotSidebarService.php"
+    ],
+    "function_count": 110,
+    "route_count": 18
+}

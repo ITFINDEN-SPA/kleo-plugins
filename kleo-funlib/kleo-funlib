@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# kleo-funlib — CLI de la biblioteca de funciones PuntoBot
+# Uso: ./kleo-funlib [build|search|stats|help] [args...]
+set -euo pipefail
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BIN="$DIR/bin"
+INDEX="$DIR/index"
+
+cmd="${1:-help}"
+shift || true
+
+case "$cmd" in
+  build)
+    php "$BIN/build_index.php" "$@"
+    ;;
+  search)
+    php "$BIN/search.php" "$@"
+    ;;
+  stats)
+    php -r '
+      $all = json_decode(file_get_contents($argv[1]), true);
+      $tf = 0; $tr = 0; $tf2 = 0;
+      foreach ($all as $n => $d) { $tf += $d["function_count"] ?? 0; $tr += $d["route_count"] ?? 0; }
+      foreach ($all as $n => $d) { $tf2 += count($d["functions"] ?? []); }
+      printf("Subsistemas: %d\nFunciones/métodos indexados: %d\nRutas HTTP: %d\n", count($all), $tf, $tr);
+      foreach ($all as $n => $d) { printf("  %-22s %4d fn  %4d rutas\n", $n, $d["function_count"] ?? 0, $d["route_count"] ?? 0); }
+    ' "$INDEX/_all.json"
+    ;;
+  help|*)
+    cat <<'EOF'
+kleo-funlib — Biblioteca de funciones del ecosistema PuntoBot
+
+COMANDOS:
+  build                Re-indexar los subsistemas (~/home/puntobot*)
+  search "término"     Buscar funciones/métodos
+        [--subsystem NOMBRE] [--type method|function] [--limit N] [--class CLASE] [--show-file]
+  stats                Resumen del índice
+  help                 Esta ayuda
+
+EJEMPLOS:
+  ./kleo-funlib search "sentiment"
+  ./kleo-funlib search "factura" --subsystem puntobotapi --limit 10
+  ./kleo-funlib search "send" --class BotChannelOutboundService --show-file
+  ./kleo-funlib build
+EOF
+    ;;
+esac

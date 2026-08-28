@@ -1,0 +1,3965 @@
+{
+    "subsystem": "puntobotagenda",
+    "scanned_at": "2026-08-28T13:55:10+00:00",
+    "app_dirs": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app"
+    ],
+    "functions": [
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AgendaApiException",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$message",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "\n        string $message"
+                },
+                {
+                    "name": "$status",
+                    "type": "int",
+                    "default": "500",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "\n        public readonly int $status  =  500"
+                },
+                {
+                    "name": "$errors",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "\n        public readonly array $errors  =  []"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(string $message, int $status = 500, array $errors = [])",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Exceptions/AgendaApiException.php",
+            "line": 9
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "AgendaApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly AgendaApiService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(AgendaApiService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 15
+        },
+        {
+            "name": "dashboard",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "dashboard(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 17
+        },
+        {
+            "name": "calendar",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "calendar(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 22
+        },
+        {
+            "name": "calendarEvents",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "calendarEvents(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 27
+        },
+        {
+            "name": "saveEvent",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $id  =  null"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "saveEvent(Request $request, ?string $id = null): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 65
+        },
+        {
+            "name": "reschedule",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "reschedule(Request $request, string $id): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 106
+        },
+        {
+            "name": "deleteEvent",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "deleteEvent(string $id): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 122
+        },
+        {
+            "name": "clients",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "clients(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 131
+        },
+        {
+            "name": "services",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "services(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 142
+        },
+        {
+            "name": "saveService",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $id  =  null"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveService(Request $request, ?string $id = null): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 147
+        },
+        {
+            "name": "deleteService",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteService(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 166
+        },
+        {
+            "name": "resources",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "resources(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 171
+        },
+        {
+            "name": "saveResource",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $id  =  null"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveResource(Request $request, ?string $id = null): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 176
+        },
+        {
+            "name": "deleteResource",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteResource(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 190
+        },
+        {
+            "name": "availability",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "availability(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 195
+        },
+        {
+            "name": "saveRule",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $id  =  null"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveRule(Request $request, ?string $id = null): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 205
+        },
+        {
+            "name": "deleteRule",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteRule(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 218
+        },
+        {
+            "name": "saveException",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveException(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 223
+        },
+        {
+            "name": "deleteException",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteException(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 234
+        },
+        {
+            "name": "slotPreview",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "slotPreview(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 239
+        },
+        {
+            "name": "bookingPages",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "bookingPages(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 250
+        },
+        {
+            "name": "saveBookingPage",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $id  =  null"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveBookingPage(Request $request, ?string $id = null): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 255
+        },
+        {
+            "name": "deleteBookingPage",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteBookingPage(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 268
+        },
+        {
+            "name": "waitlist",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "waitlist(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 273
+        },
+        {
+            "name": "saveWaitlist",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $id  =  null"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveWaitlist(Request $request, ?string $id = null): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 278
+        },
+        {
+            "name": "deleteWaitlist",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteWaitlist(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 292
+        },
+        {
+            "name": "promoteWaitlist",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "promoteWaitlist(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 297
+        },
+        {
+            "name": "reports",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "reports(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 304
+        },
+        {
+            "name": "settings",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "settings(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 311
+        },
+        {
+            "name": "saveSettings",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveSettings(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 320
+        },
+        {
+            "name": "saveIntegration",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveIntegration(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 331
+        },
+        {
+            "name": "deleteIntegration",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteIntegration(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 341
+        },
+        {
+            "name": "saveFeed",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "saveFeed(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 346
+        },
+        {
+            "name": "deleteFeed",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "deleteFeed(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 353
+        },
+        {
+            "name": "payment",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "payment(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 358
+        },
+        {
+            "name": "catalogs",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "catalogs(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 365
+        },
+        {
+            "name": "screen",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$screen",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $screen"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "View",
+            "signature": "screen(string $screen, array $data = []): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 373
+        },
+        {
+            "name": "safe",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$operation",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Closure $operation"
+                }
+            ],
+            "return_type": "array",
+            "signature": "safe(Closure $operation): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 378
+        },
+        {
+            "name": "mutate",
+            "type": "method",
+            "class": "AgendaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$operation",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Closure $operation"
+                },
+                {
+                    "name": "$fallback",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $fallback"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "mutate(Closure $operation, string $fallback): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+            "line": 389
+        },
+        {
+            "name": "__invoke",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "JsonResponse",
+            "signature": "__invoke(): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 9
+        },
+        {
+            "name": "check",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$key",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $key"
+                },
+                {
+                    "name": "$name",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $name"
+                },
+                {
+                    "name": "$ok",
+                    "type": "bool",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $ok"
+                },
+                {
+                    "name": "$critical",
+                    "type": "bool",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $critical"
+                },
+                {
+                    "name": "$message",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $message"
+                }
+            ],
+            "return_type": "array",
+            "signature": "check(string $key, string $name, bool $ok, bool $critical, string $message): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 50
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PublicBookingController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "AgendaApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly AgendaApiService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(AgendaApiService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PublicBookingController.php",
+            "line": 14
+        },
+        {
+            "name": "show",
+            "type": "method",
+            "class": "PublicBookingController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "View",
+            "signature": "show(string $token): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PublicBookingController.php",
+            "line": 16
+        },
+        {
+            "name": "slots",
+            "type": "method",
+            "class": "PublicBookingController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "slots(Request $request, string $token): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PublicBookingController.php",
+            "line": 25
+        },
+        {
+            "name": "book",
+            "type": "method",
+            "class": "PublicBookingController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "book(Request $request, string $token): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PublicBookingController.php",
+            "line": 36
+        },
+        {
+            "name": "confirmation",
+            "type": "method",
+            "class": "PublicBookingController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "View",
+            "signature": "confirmation(string $token): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PublicBookingController.php",
+            "line": 53
+        },
+        {
+            "name": "cancel",
+            "type": "method",
+            "class": "PublicBookingController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "cancel(Request $request, string $token): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PublicBookingController.php",
+            "line": 62
+        },
+        {
+            "name": "show",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "show(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 12
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 75
+        },
+        {
+            "name": "settings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "settings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 12
+        },
+        {
+            "name": "updateSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 17
+        },
+        {
+            "name": "ping",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "ping(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 22
+        },
+        {
+            "name": "unlock",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "unlock(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 29
+        },
+        {
+            "name": "proxy",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "proxy(Request $request, string $method, string $endpoint, array $data = []): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 34
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 71
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$sidebar",
+                    "type": "PuntobotSidebarService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly PuntobotSidebarService $sidebar"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(PuntobotSidebarService $sidebar)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 11
+        },
+        {
+            "name": "activeSubsystems",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "activeSubsystems(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 13
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "PuntobotApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "\n        private readonly PuntobotApiService $api"
+                },
+                {
+                    "name": "$sidebar",
+                    "type": "PuntobotSidebarService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "\n        private readonly PuntobotSidebarService $sidebar"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(PuntobotApiService $api, PuntobotSidebarService $sidebar)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Middleware/AuthSSO.php",
+            "line": 15
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Middleware/AuthSSO.php",
+            "line": 20
+        },
+        {
+            "name": "redirectToLogin",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "redirectToLogin(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Middleware/AuthSSO.php",
+            "line": 44
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "EnsurePuntobotToken",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Middleware/EnsurePuntobotToken.php",
+            "line": 11
+        },
+        {
+            "name": "casts",
+            "type": "method",
+            "class": "User",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "casts(): array",
+            "summary": "Get the attributes that should be cast.",
+            "doc": "/**\n     * Get the attributes that should be cast.\n     *\n     * @return array<string, string>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Models/User.php",
+            "line": 42
+        },
+        {
+            "name": "register",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "register(): void",
+            "summary": "Register any application services.",
+            "doc": "/**\n     * Register any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Providers/AppServiceProvider.php",
+            "line": 12
+        },
+        {
+            "name": "boot",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "boot(): void",
+            "summary": "Bootstrap any application services.",
+            "doc": "/**\n     * Bootstrap any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Providers/AppServiceProvider.php",
+            "line": 20
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly Request $request"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(Request $request)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 14
+        },
+        {
+            "name": "get",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $path"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                },
+                {
+                    "name": "$public",
+                    "type": "bool",
+                    "default": "false",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $public  =  false"
+                }
+            ],
+            "return_type": "array",
+            "signature": "get(string $path, array $query = [], bool $public = false): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 16
+        },
+        {
+            "name": "post",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $path"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$public",
+                    "type": "bool",
+                    "default": "false",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $public  =  false"
+                }
+            ],
+            "return_type": "array",
+            "signature": "post(string $path, array $data = [], bool $public = false): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 21
+        },
+        {
+            "name": "put",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $path"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "put(string $path, array $data = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 26
+        },
+        {
+            "name": "patch",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $path"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "patch(string $path, array $data = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 31
+        },
+        {
+            "name": "delete",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $path"
+                }
+            ],
+            "return_type": "array",
+            "signature": "delete(string $path): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 36
+        },
+        {
+            "name": "dashboard",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "dashboard(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 41
+        },
+        {
+            "name": "events",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$filters",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $filters  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "events(array $filters = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 46
+        },
+        {
+            "name": "event",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "event(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 51
+        },
+        {
+            "name": "createEvent",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createEvent(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 56
+        },
+        {
+            "name": "updateEvent",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateEvent(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 61
+        },
+        {
+            "name": "rescheduleEvent",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "rescheduleEvent(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 66
+        },
+        {
+            "name": "updateEventStatus",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$status",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $status"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateEventStatus(int|string $id, string $status): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 71
+        },
+        {
+            "name": "deleteEvent",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteEvent(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 76
+        },
+        {
+            "name": "initPayment",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "initPayment(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 81
+        },
+        {
+            "name": "reconcilePayment",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "reconcilePayment(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 86
+        },
+        {
+            "name": "services",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "services(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 91
+        },
+        {
+            "name": "createService",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createService(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 96
+        },
+        {
+            "name": "updateService",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateService(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 101
+        },
+        {
+            "name": "deleteService",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteService(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 106
+        },
+        {
+            "name": "resources",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "resources(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 111
+        },
+        {
+            "name": "createResource",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createResource(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 116
+        },
+        {
+            "name": "updateResource",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateResource(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 121
+        },
+        {
+            "name": "deleteResource",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteResource(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 126
+        },
+        {
+            "name": "availability",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "availability(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 131
+        },
+        {
+            "name": "slots",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $query"
+                }
+            ],
+            "return_type": "array",
+            "signature": "slots(array $query): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 136
+        },
+        {
+            "name": "createRule",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createRule(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 141
+        },
+        {
+            "name": "updateRule",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateRule(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 146
+        },
+        {
+            "name": "deleteRule",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteRule(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 151
+        },
+        {
+            "name": "createException",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createException(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 156
+        },
+        {
+            "name": "deleteException",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteException(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 161
+        },
+        {
+            "name": "bookingPages",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "bookingPages(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 166
+        },
+        {
+            "name": "createBookingPage",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createBookingPage(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 171
+        },
+        {
+            "name": "updateBookingPage",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateBookingPage(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 176
+        },
+        {
+            "name": "deleteBookingPage",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteBookingPage(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 181
+        },
+        {
+            "name": "publicPage",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "publicPage(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 186
+        },
+        {
+            "name": "publicSlots",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$date",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $date"
+                }
+            ],
+            "return_type": "array",
+            "signature": "publicSlots(string $token, string $date): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 191
+        },
+        {
+            "name": "publicBook",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "publicBook(string $token, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 196
+        },
+        {
+            "name": "publicBooking",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "publicBooking(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 201
+        },
+        {
+            "name": "cancelPublicBooking",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$reason",
+                    "type": "?string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $reason"
+                }
+            ],
+            "return_type": "array",
+            "signature": "cancelPublicBooking(string $token, ?string $reason): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 206
+        },
+        {
+            "name": "waitlist",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "waitlist(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 211
+        },
+        {
+            "name": "createWaitlist",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createWaitlist(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 216
+        },
+        {
+            "name": "updateWaitlist",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateWaitlist(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 221
+        },
+        {
+            "name": "deleteWaitlist",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteWaitlist(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 226
+        },
+        {
+            "name": "promoteWaitlist",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "promoteWaitlist(int|string $id, array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 231
+        },
+        {
+            "name": "clients",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$query",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $query"
+                }
+            ],
+            "return_type": "array",
+            "signature": "clients(string $query): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 236
+        },
+        {
+            "name": "reports",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$filters",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $filters  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "reports(array $filters = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 241
+        },
+        {
+            "name": "settings",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "settings(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 246
+        },
+        {
+            "name": "updateSettings",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateSettings(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 251
+        },
+        {
+            "name": "integrations",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "integrations(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 256
+        },
+        {
+            "name": "createIntegration",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createIntegration(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 261
+        },
+        {
+            "name": "deleteIntegration",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteIntegration(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 266
+        },
+        {
+            "name": "feeds",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "feeds(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 271
+        },
+        {
+            "name": "createFeed",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createFeed(array $data): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 276
+        },
+        {
+            "name": "deleteFeed",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "int|string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int|string $id"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteFeed(int|string $id): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 281
+        },
+        {
+            "name": "send",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $path"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$public",
+                    "type": "bool",
+                    "default": "false",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $public  =  false"
+                }
+            ],
+            "return_type": "array",
+            "signature": "send(string $method, string $path, array $data = [], bool $public = false): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 286
+        },
+        {
+            "name": "client",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                },
+                {
+                    "name": "$public",
+                    "type": "bool",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $public"
+                }
+            ],
+            "return_type": "PendingRequest",
+            "signature": "client(string $url, bool $public): PendingRequest",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 308
+        },
+        {
+            "name": "normalize",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "Response",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Response $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalize(Response $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 328
+        },
+        {
+            "name": "url",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$path",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $path"
+                }
+            ],
+            "return_type": "string",
+            "signature": "url(string $path): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 348
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "AgendaApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+            "line": 357
+        },
+        {
+            "name": "currentUser",
+            "type": "method",
+            "class": "PuntobotApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "currentUser(string $token): ?array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotApiService.php",
+            "line": 10
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotApiService.php",
+            "line": 39
+        },
+        {
+            "name": "getFromSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "getFromSession(Request $request): ?array",
+            "summary": null,
+            "doc": "/** @return array<int, array<string, mixed>>|null */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 16
+        },
+        {
+            "name": "warmSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmSession(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 36
+        },
+        {
+            "name": "resolvePayload",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolvePayload(Request $request, string $token): ?array",
+            "summary": null,
+            "doc": "/** @return array{subsistemas: array<int, array<string, mixed>>}|null */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 50
+        },
+        {
+            "name": "fallbackItems",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "fallbackItems(): array",
+            "summary": null,
+            "doc": "/** @return array<int, array<string, mixed>> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 69
+        },
+        {
+            "name": "storeInSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$items",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $items"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "void",
+            "signature": "storeInSession(Request $request, array $items, int $companyId): void",
+            "summary": null,
+            "doc": "/** @param array<int, array<string, mixed>> $items */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 75
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 84
+        },
+        {
+            "name": "fetchFromApi",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "fetchFromApi(string $token, int $companyId): ?array",
+            "summary": null,
+            "doc": "/** @return array<int, array<string, mixed>>|null */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 90
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 117
+        }
+    ],
+    "classes": [
+        "AgendaApiException",
+        "AgendaController",
+        "Controller",
+        "HealthDiagnosticsController",
+        "PublicBookingController",
+        "PuntobotSessionContextController",
+        "PuntobotSessionGuardController",
+        "PuntobotSidebarController",
+        "AuthSSO",
+        "EnsurePuntobotToken",
+        "User",
+        "AppServiceProvider",
+        "AgendaApiService",
+        "PuntobotApiService",
+        "PuntobotSidebarService"
+    ],
+    "routes": [
+        {
+            "method": "GET",
+            "uri": "/health/diagnostics",
+            "action": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/{assetType}/{assetFile}",
+            "action": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": "AgendaController::class, 'dashboard'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/calendario",
+            "action": "AgendaController::class, 'calendar'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/calendario/eventos",
+            "action": "AgendaController::class, 'calendarEvents'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/calendario/eventos",
+            "action": "AgendaController::class, 'saveEvent'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/calendario/eventos/{id}",
+            "action": "AgendaController::class, 'saveEvent'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/calendario/eventos/{id}/reprogramar",
+            "action": "AgendaController::class, 'reschedule'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/calendario/eventos/{id}",
+            "action": "AgendaController::class, 'deleteEvent'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/clientes/buscar",
+            "action": "AgendaController::class, 'clients'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/eventos/{id}/pago",
+            "action": "AgendaController::class, 'payment'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/servicios",
+            "action": "AgendaController::class, 'services'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/servicios",
+            "action": "AgendaController::class, 'saveService'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/servicios/{id}",
+            "action": "AgendaController::class, 'saveService'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/servicios/{id}",
+            "action": "AgendaController::class, 'deleteService'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/recursos",
+            "action": "AgendaController::class, 'resources'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/recursos",
+            "action": "AgendaController::class, 'saveResource'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/recursos/{id}",
+            "action": "AgendaController::class, 'saveResource'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/recursos/{id}",
+            "action": "AgendaController::class, 'deleteResource'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/disponibilidad",
+            "action": "AgendaController::class, 'availability'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/disponibilidad/reglas",
+            "action": "AgendaController::class, 'saveRule'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/disponibilidad/reglas/{id}",
+            "action": "AgendaController::class, 'saveRule'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/disponibilidad/reglas/{id}",
+            "action": "AgendaController::class, 'deleteRule'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/disponibilidad/excepciones",
+            "action": "AgendaController::class, 'saveException'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/disponibilidad/excepciones/{id}",
+            "action": "AgendaController::class, 'deleteException'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/disponibilidad/slots",
+            "action": "AgendaController::class, 'slotPreview'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/reservas-publicas",
+            "action": "AgendaController::class, 'bookingPages'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/reservas-publicas",
+            "action": "AgendaController::class, 'saveBookingPage'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/reservas-publicas/{id}",
+            "action": "AgendaController::class, 'saveBookingPage'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/reservas-publicas/{id}",
+            "action": "AgendaController::class, 'deleteBookingPage'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/lista-espera",
+            "action": "AgendaController::class, 'waitlist'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/lista-espera",
+            "action": "AgendaController::class, 'saveWaitlist'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/lista-espera/{id}",
+            "action": "AgendaController::class, 'saveWaitlist'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/lista-espera/{id}",
+            "action": "AgendaController::class, 'deleteWaitlist'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/lista-espera/{id}/promover",
+            "action": "AgendaController::class, 'promoteWaitlist'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/reportes",
+            "action": "AgendaController::class, 'reports'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/configuracion",
+            "action": "AgendaController::class, 'settings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/configuracion",
+            "action": "AgendaController::class, 'saveSettings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/configuracion/integraciones",
+            "action": "AgendaController::class, 'saveIntegration'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/configuracion/integraciones/{id}",
+            "action": "AgendaController::class, 'deleteIntegration'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/configuracion/feeds",
+            "action": "AgendaController::class, 'saveFeed'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/configuracion/feeds/{id}",
+            "action": "AgendaController::class, 'deleteFeed'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/reservar/{token}",
+            "action": "PublicBookingController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/reservar/{token}/horarios",
+            "action": "PublicBookingController::class, 'slots'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/reservar/{token}",
+            "action": "PublicBookingController::class, 'book'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/reserva/{token}",
+            "action": "PublicBookingController::class, 'confirmation'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/reserva/{token}/cancelar",
+            "action": "PublicBookingController::class, 'cancel'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session-context",
+            "action": "PuntobotSessionContextController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session/settings",
+            "action": "PuntobotSessionGuardController::class, 'settings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/puntobot/session/settings",
+            "action": "PuntobotSessionGuardController::class, 'updateSettings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/ping",
+            "action": "PuntobotSessionGuardController::class, 'ping'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/unlock",
+            "action": "PuntobotSessionGuardController::class, 'unlock'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/logout",
+            "action": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/routes/web.php"
+        }
+    ],
+    "files": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Exceptions/AgendaApiException.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/AgendaController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/Controller.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/HealthDiagnosticsController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PublicBookingController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionContextController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Controllers/PuntobotSidebarController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Middleware/AuthSSO.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Http/Middleware/EnsurePuntobotToken.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Models/User.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Providers/AppServiceProvider.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/AgendaApiService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotApiService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotagenda/laravel/app/Services/PuntobotSidebarService.php"
+    ],
+    "function_count": 135,
+    "route_count": 53
+}

@@ -1,0 +1,2548 @@
+{
+    "subsystem": "puntobotpagos",
+    "scanned_at": "2026-08-28T13:55:10+00:00",
+    "app_dirs": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app"
+    ],
+    "functions": [
+        {
+            "name": "index",
+            "type": "method",
+            "class": "IncomeReportController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "index(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/IncomeReportController.php",
+            "line": 13
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "PaymentPlanController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "JsonResponse",
+            "signature": "index(): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentPlanController.php",
+            "line": 11
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "PaymentTransactionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "index(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentTransactionController.php",
+            "line": 18
+        },
+        {
+            "name": "store",
+            "type": "method",
+            "class": "PaymentTransactionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "StoreTransactionRequest",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "StoreTransactionRequest $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "store(StoreTransactionRequest $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentTransactionController.php",
+            "line": 46
+        },
+        {
+            "name": "confirm",
+            "type": "method",
+            "class": "PaymentTransactionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "ConfirmTransactionRequest",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "ConfirmTransactionRequest $request"
+                },
+                {
+                    "name": "$transaction",
+                    "type": "PaymentTransaction",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " PaymentTransaction $transaction"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "confirm(ConfirmTransactionRequest $request, PaymentTransaction $transaction): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentTransactionController.php",
+            "line": 67
+        },
+        {
+            "name": "refund",
+            "type": "method",
+            "class": "PaymentTransactionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "RefundTransactionRequest",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "RefundTransactionRequest $request"
+                },
+                {
+                    "name": "$transaction",
+                    "type": "PaymentTransaction",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " PaymentTransaction $transaction"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "refund(RefundTransactionRequest $request, PaymentTransaction $transaction): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentTransactionController.php",
+            "line": 83
+        },
+        {
+            "name": "serialize",
+            "type": "method",
+            "class": "PaymentTransactionController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$transaction",
+                    "type": "PaymentTransaction",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "PaymentTransaction $transaction"
+                }
+            ],
+            "return_type": "array",
+            "signature": "serialize(PaymentTransaction $transaction): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentTransactionController.php",
+            "line": 104
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "SubscriptionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "index(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/SubscriptionController.php",
+            "line": 14
+        },
+        {
+            "name": "store",
+            "type": "method",
+            "class": "SubscriptionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "StoreSubscriptionRequest",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "StoreSubscriptionRequest $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "store(StoreSubscriptionRequest $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/SubscriptionController.php",
+            "line": 34
+        },
+        {
+            "name": "destroy",
+            "type": "method",
+            "class": "SubscriptionController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$subscription",
+                    "type": "Subscription",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Subscription $subscription"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "destroy(Subscription $subscription): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/SubscriptionController.php",
+            "line": 51
+        },
+        {
+            "name": "serialize",
+            "type": "method",
+            "class": "SubscriptionController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$subscription",
+                    "type": "Subscription",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Subscription $subscription"
+                }
+            ],
+            "return_type": "array",
+            "signature": "serialize(Subscription $subscription): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/SubscriptionController.php",
+            "line": 64
+        },
+        {
+            "name": "store",
+            "type": "method",
+            "class": "WebhookController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "StoreWebhookRequest",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "StoreWebhookRequest $request"
+                },
+                {
+                    "name": "$gateway",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $gateway"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "store(StoreWebhookRequest $request, string $gateway): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/WebhookController.php",
+            "line": 14
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "DashboardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiPagosService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiPagosService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiPagosService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/DashboardController.php",
+            "line": 11
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "DashboardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "index(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/DashboardController.php",
+            "line": 15
+        },
+        {
+            "name": "__invoke",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "JsonResponse",
+            "signature": "__invoke(): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 11
+        },
+        {
+            "name": "storageCheck",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "storageCheck(): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 43
+        },
+        {
+            "name": "cacheCheck",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "cacheCheck(): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 52
+        },
+        {
+            "name": "dataAccessCheck",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "dataAccessCheck(): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 75
+        },
+        {
+            "name": "queueCheck",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "queueCheck(): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 86
+        },
+        {
+            "name": "apiConfigurationCheck",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "apiConfigurationCheck(): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 96
+        },
+        {
+            "name": "check",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$key",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $key"
+                },
+                {
+                    "name": "$name",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $name"
+                },
+                {
+                    "name": "$ok",
+                    "type": "bool",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $ok"
+                },
+                {
+                    "name": "$critical",
+                    "type": "bool",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $critical"
+                },
+                {
+                    "name": "$message",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $message"
+                }
+            ],
+            "return_type": "array",
+            "signature": "check(string $key, string $name, bool $ok, bool $critical, string $message): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 106
+        },
+        {
+            "name": "warning",
+            "type": "method",
+            "class": "HealthDiagnosticsController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$key",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $key"
+                },
+                {
+                    "name": "$name",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $name"
+                },
+                {
+                    "name": "$message",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $message"
+                }
+            ],
+            "return_type": "array",
+            "signature": "warning(string $key, string $name, string $message): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+            "line": 119
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PaymentController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiPagosService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiPagosService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiPagosService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PaymentController.php",
+            "line": 12
+        },
+        {
+            "name": "create",
+            "type": "method",
+            "class": "PaymentController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "create(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PaymentController.php",
+            "line": 16
+        },
+        {
+            "name": "store",
+            "type": "method",
+            "class": "PaymentController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "store(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PaymentController.php",
+            "line": 31
+        },
+        {
+            "name": "webpayReturn",
+            "type": "method",
+            "class": "PaymentController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View|RedirectResponse",
+            "signature": "webpayReturn(Request $request): View|RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PaymentController.php",
+            "line": 92
+        },
+        {
+            "name": "show",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "show(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 12
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 83
+        },
+        {
+            "name": "settings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "settings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 13
+        },
+        {
+            "name": "updateSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateSettings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 18
+        },
+        {
+            "name": "ping",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "ping(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 23
+        },
+        {
+            "name": "unlock",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "unlock(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 30
+        },
+        {
+            "name": "online",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "online(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 35
+        },
+        {
+            "name": "revoke",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$jti",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $jti"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "revoke(Request $request, string $jti): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 44
+        },
+        {
+            "name": "globalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "globalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 53
+        },
+        {
+            "name": "updateGlobalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateGlobalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 62
+        },
+        {
+            "name": "proxy",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "proxy(Request $request, string $method, string $endpoint, array $data = []): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 71
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 109
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$sidebar",
+                    "type": "PuntobotSidebarService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly PuntobotSidebarService $sidebar"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(PuntobotSidebarService $sidebar)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 11
+        },
+        {
+            "name": "activeSubsystems",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "activeSubsystems(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 15
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiPagosService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiPagosService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiPagosService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 19
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 23
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$user",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $user"
+                },
+                {
+                    "name": "$companyIdFromAuth",
+                    "type": "mixed",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " mixed $companyIdFromAuth"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request, array $user, mixed $companyIdFromAuth): int",
+            "summary": null,
+            "doc": "/** @param  array<string, mixed>  $user */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 92
+        },
+        {
+            "name": "redirectToLogin",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\RedirectResponse",
+            "signature": "redirectToLogin(Request $request): \\Illuminate\\Http\\RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 112
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 123
+        },
+        {
+            "name": "warmPuntobotSidebar",
+            "type": "method",
+            "class": "WarmsPuntobotSidebar",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmPuntobotSidebar(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+            "line": 10
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "EnsurePuntobotToken",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+            "line": 11
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "GuestSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/GuestSSO.php",
+            "line": 10
+        },
+        {
+            "name": "authorize",
+            "type": "method",
+            "class": "ConfirmTransactionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "bool",
+            "signature": "authorize(): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/ConfirmTransactionRequest.php",
+            "line": 9
+        },
+        {
+            "name": "rules",
+            "type": "method",
+            "class": "ConfirmTransactionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "rules(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/ConfirmTransactionRequest.php",
+            "line": 14
+        },
+        {
+            "name": "authorize",
+            "type": "method",
+            "class": "RefundTransactionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "bool",
+            "signature": "authorize(): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/RefundTransactionRequest.php",
+            "line": 9
+        },
+        {
+            "name": "rules",
+            "type": "method",
+            "class": "RefundTransactionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "rules(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/RefundTransactionRequest.php",
+            "line": 14
+        },
+        {
+            "name": "authorize",
+            "type": "method",
+            "class": "StoreSubscriptionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "bool",
+            "signature": "authorize(): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreSubscriptionRequest.php",
+            "line": 9
+        },
+        {
+            "name": "rules",
+            "type": "method",
+            "class": "StoreSubscriptionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "rules(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreSubscriptionRequest.php",
+            "line": 14
+        },
+        {
+            "name": "authorize",
+            "type": "method",
+            "class": "StoreTransactionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "bool",
+            "signature": "authorize(): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreTransactionRequest.php",
+            "line": 9
+        },
+        {
+            "name": "rules",
+            "type": "method",
+            "class": "StoreTransactionRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "rules(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreTransactionRequest.php",
+            "line": 14
+        },
+        {
+            "name": "authorize",
+            "type": "method",
+            "class": "StoreWebhookRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "bool",
+            "signature": "authorize(): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreWebhookRequest.php",
+            "line": 9
+        },
+        {
+            "name": "rules",
+            "type": "method",
+            "class": "StoreWebhookRequest",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "rules(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreWebhookRequest.php",
+            "line": 14
+        },
+        {
+            "name": "register",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "register(): void",
+            "summary": "Register any application services.",
+            "doc": "/**\n     * Register any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Providers/AppServiceProvider.php",
+            "line": 12
+        },
+        {
+            "name": "boot",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "boot(): void",
+            "summary": "Bootstrap any application services.",
+            "doc": "/**\n     * Bootstrap any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Providers/AppServiceProvider.php",
+            "line": 20
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": null,
+            "signature": "__construct()",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 17
+        },
+        {
+            "name": "getToken",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "string",
+            "signature": "getToken(): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 24
+        },
+        {
+            "name": "setToken",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "self",
+            "signature": "setToken(string $token): self",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 29
+        },
+        {
+            "name": "getPlans",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getPlans(?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 36
+        },
+        {
+            "name": "getSessionContext",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "?int",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?int $companyId  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getSessionContext(string $token, ?int $companyId = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 41
+        },
+        {
+            "name": "listTransactions",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$params",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $params  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "listTransactions(array $params = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 52
+        },
+        {
+            "name": "createTransaction",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createTransaction(array $data, ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 57
+        },
+        {
+            "name": "confirmTransaction",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "confirmTransaction(string $id, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 62
+        },
+        {
+            "name": "refundTransaction",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "refundTransaction(string $id, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 67
+        },
+        {
+            "name": "listSubscriptions",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$params",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $params  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "listSubscriptions(array $params = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 72
+        },
+        {
+            "name": "createSubscription",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createSubscription(array $data, ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 77
+        },
+        {
+            "name": "getIncomeReport",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$params",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $params  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getIncomeReport(array $params = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 82
+        },
+        {
+            "name": "initWebpayPayment",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $data"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "initWebpayPayment(array $data, ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 87
+        },
+        {
+            "name": "confirmWebpayPayment",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "confirmWebpayPayment(string $id, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 92
+        },
+        {
+            "name": "errorMessage",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                },
+                {
+                    "name": "$fallback",
+                    "type": "string",
+                    "default": "'Ocurrió un error al comunicarse con la API.'",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $fallback  =  'Ocurrió un error al comunicarse con la API.'"
+                }
+            ],
+            "return_type": "string",
+            "signature": "errorMessage(array $response, string $fallback = 'Ocurrió un error al comunicarse con la API.'): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 97
+        },
+        {
+            "name": "request",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "request(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 113
+        },
+        {
+            "name": "url",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "url(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 142
+        },
+        {
+            "name": "normalizeFilters",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$params",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $params"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeFilters(array $params): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 151
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 187
+        },
+        {
+            "name": "normalizeResponse",
+            "type": "method",
+            "class": "ApiPagosService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "Response",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Response $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeResponse(Response $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+            "line": 205
+        },
+        {
+            "name": "getFromSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "getFromSession(Request $request): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 18
+        },
+        {
+            "name": "warmSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmSession(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 40
+        },
+        {
+            "name": "resolvePayload",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolvePayload(Request $request, string $token): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array{subsistemas: array<int, array<string, mixed>>}|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 59
+        },
+        {
+            "name": "fallbackItems",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "fallbackItems(): array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 82
+        },
+        {
+            "name": "storeInSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$items",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $items"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "void",
+            "signature": "storeInSession(Request $request, array $items, int $companyId): void",
+            "summary": null,
+            "doc": "/**\n     * @param array<int, array<string, mixed>> $items\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 90
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 99
+        },
+        {
+            "name": "fetchFromApi",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "fetchFromApi(string $token, int $companyId): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 109
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 145
+        }
+    ],
+    "classes": [
+        "IncomeReportController",
+        "PaymentPlanController",
+        "PaymentTransactionController",
+        "SubscriptionController",
+        "WebhookController",
+        "Controller",
+        "DashboardController",
+        "HealthDiagnosticsController",
+        "PaymentController",
+        "PuntobotSessionContextController",
+        "PuntobotSessionGuardController",
+        "PuntobotSidebarController",
+        "AuthSSO",
+        "WarmsPuntobotSidebar",
+        "EnsurePuntobotToken",
+        "GuestSSO",
+        "ConfirmTransactionRequest",
+        "RefundTransactionRequest",
+        "StoreSubscriptionRequest",
+        "StoreTransactionRequest",
+        "StoreWebhookRequest",
+        "AppServiceProvider",
+        "ApiPagosService",
+        "PuntobotSidebarService"
+    ],
+    "routes": [
+        {
+            "method": "GET",
+            "uri": "/health/diagnostics",
+            "action": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/subsistemas/activos",
+            "action": "\\App\\Http\\Controllers\\PuntobotSidebarController::class, 'activeSubsystems'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/dashboard",
+            "action": "DashboardController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/pagos/nuevo",
+            "action": "PaymentController::class, 'create'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/pagos/iniciar",
+            "action": "PaymentController::class, 'store'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/pagos/webpay/retorno",
+            "action": "PaymentController::class, 'webpayReturn'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session-context",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionContextController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'settings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'updateSettings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/ping",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'ping'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/unlock",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'unlock'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/plans",
+            "action": "PaymentPlanController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/transactions",
+            "action": "PaymentTransactionController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/transactions",
+            "action": "PaymentTransactionController::class, 'store'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/transactions/{transaction}/confirm",
+            "action": "PaymentTransactionController::class, 'confirm'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/transactions/{transaction}/refund",
+            "action": "PaymentTransactionController::class, 'refund'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/subscriptions",
+            "action": "SubscriptionController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/subscriptions",
+            "action": "SubscriptionController::class, 'store'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/subscriptions/{subscription}",
+            "action": "SubscriptionController::class, 'destroy'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/webhooks/{gateway}",
+            "action": "WebhookController::class, 'store'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/reports/income",
+            "action": "IncomeReportController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/routes/api.php"
+        }
+    ],
+    "files": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/IncomeReportController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentPlanController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/PaymentTransactionController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/SubscriptionController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Api/WebhookController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/Controller.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/DashboardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/HealthDiagnosticsController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PaymentController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/AuthSSO.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Middleware/GuestSSO.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/ConfirmTransactionRequest.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/RefundTransactionRequest.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreSubscriptionRequest.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreTransactionRequest.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Http/Requests/Payments/StoreWebhookRequest.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Models/GatewayWebhookEvent.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Models/PaymentPlan.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Models/PaymentTransaction.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Models/Subscription.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Models/User.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Providers/AppServiceProvider.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/ApiPagosService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotpagos/public_html/app/Services/PuntobotSidebarService.php"
+    ],
+    "function_count": 88,
+    "route_count": 22
+}

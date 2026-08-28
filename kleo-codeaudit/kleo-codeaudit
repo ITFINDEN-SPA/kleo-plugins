@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+# kleo-codeaudit — Auditoría de seguridad y optimización del código PuntoBot
+#
+# Uso: ./kleo-codeaudit [subsistema] [--full]
+#   Sin argumentos: audita TODOS los subsistemas (resumen)
+#   Con subsistema: auditoría detallada de uno
+#   --full: incluye análisis de duplicación y tamaño por archivo
+#
+# Revisiones (LOCAL — no toca producción):
+#   1. Secretos en archivos trackeados (git) o en app/
+#   2. .env* presentes y permisos
+#   3. Uso de funciones peligrosas (eval, exec, system, shell_exec, unserialize)
+#   4. Configuración de debug/entorno en .env (APP_DEBUG)
+#   5. Código duplicado (hashes de funciones) — con --full
+#   6. Tamaño de archivos sospechosos (minificado, base64)
+set -euo pipefail
+
+ROOT="${AUDIT_ROOT:-$HOME/home}"
+sub="${1:-}"
+full=0
+[ "${1:-}" = "--full" ] && { full=1; sub=""; }
+[ "${2:-}" = "--full" ] && full=1
+
+audit_subsystem() {
+    local name="$1"
+    local dir="$ROOT/$name/public_html"
+    [ -d "$dir/app" ] || dir="$ROOT/$name/laravel"
+    [ -d "$dir/app" ] || { echo "  (sin app/ — se omite)"; return; }
+
+    local issues=0
+    echo "── $name ──"
+
+    # 1. Secretos en app/ o rutas (sin vendor)
+    local secrets
+    secrets=$(grep -rIlE "(sk_live|sk_test|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{36}|api[_-]?key[[:space:]]*=[[:space:]]*['\"][A-Za-z0-9]{20,}|secret[[:space:]]*=[[:space:]]*['\"][A-Za-z0-9]{20,})" "$dir/app" "$dir/config" "$dir/routes" 2>/dev/null | head -5 || true)
+    if [ -n "$secrets" ]; then
+        echo "  🔴 POSIBLES SECRETOS HARDCODEADOS:"
+        echo "$secrets" | sed "s|$ROOT/||" | head -5
+        issues=$((issues+1))
+    fi
+
+    # 2. .env y permisos
+    if [ -f "$dir/.env" ]; then
+        local perms debug
+        perms=$(stat -c "%a" "$dir/.env" 2>/dev/null || stat -f "%Lp" "$dir/.env")
+        debug=$(grep -c "APP_DEBUG=true" "$dir/.env" 2>/dev/null || echo 0)
+        echo "  .env: permisos $perms $([ "$perms" != "600" ] && [ "$perms" != "640" ] && echo '⚠️ (recomendado 600/640)')"
+        [ "$debug" -gt 0 ] && { echo "  🔴 APP_DEBUG=true en .env (producción debería ser false)"; issues=$((issues+1)); }
+    else
+        echo "  .env: no existe (¿QA sin configurar?)"
+    fi
+
+    # 3. Funciones peligrosas
+    local danger
+    danger=$(grep -rEn "(eval[[:space:]]*\(|shell_exec[[:space:]]*\(|passthru[[:space:]]*\(|system[[:space:]]*\()" "$dir/app" 2>/dev/null | grep -v "vendor\|function exec\|->exec\|Command::\|Process::" | head -5 || true)
+    if [ -n "$danger" ]; then
+        echo "  🟠 Posible uso de funciones peligrosas:"
+        echo "$danger" | sed "s|$ROOT/||" | head -5
+        issues=$((issues+1))
+    fi
+
+    # 4. unserialize (riesgo RCE)
+    local unser
+    unser=$(find "$dir/app" -name '*.php' -exec grep -l "unserialize[[:space:]]*(" {} + 2>/dev/null | wc -l | tr -d ' ' || echo 0)
+    [ "${unser:-0}" -gt 0 ] 2>/dev/null && { echo "  🟠 unserialize usado en ${unser} archivo(s) (validar entradas)"; issues=$((issues+1)); }
+
+    # 5. Git: archivos sin commit / secretos en histórico
+    if [ -d "$dir/.git" ]; then
+        local dirty
+        dirty=$(git -C "$dir" status --porcelain 2>/dev/null | wc -l | tr -d ' ' || echo 0)
+        echo "  git: $dirty archivo(s) sin commit"
+        local trackenv
+        trackenv=$(git -C "$dir" ls-files 2>/dev/null | grep -c "\.env$" || true)
+        trackenv="${trackenv:-0}"
+        [ "$trackenv" -gt 0 ] 2>/dev/null && { echo "  🔴 .env trackeado en git ($trackenv)"; issues=$((issues+1)); }
+    else
+        echo "  git: NO hay repositorio"
+    fi
+
+    # 6. --full: duplicación y archivos grandes
+    if [ "$full" = "1" ]; then
+        local dup
+        dup=$(find "$dir/app" -name '*.php' 2>/dev/null | xargs md5 2>/dev/null | awk '{print $NF}' | sort | uniq -d | wc -l | tr -d ' ' || echo 0)
+        [ "${dup:-0}" -gt 0 ] && { echo "  🟠 $dup grupo(s) de archivos duplicados"; issues=$((issues+1)); }
+        local big
+        big=$(find "$dir/app" -name '*.php' -size +500k 2>/dev/null | head -3)
+        [ -n "$big" ] && echo "  🟠 Archivos grandes (>500k):" && echo "$big" | sed "s|$ROOT/||"
+    fi
+
+    [ "$issues" -eq 0 ] && echo "  ✅ Sin hallazgos"
+    echo
+    return "$issues"
+}
+
+if [ -n "$sub" ]; then
+    audit_subsystem "$sub"
+else
+    total=0
+    for d in "$ROOT"/puntobot*/; do
+        [ -d "$d" ] || continue
+        name=$(basename "$d")
+        set +e
+        audit_subsystem "$name"
+        total=$((total+$?))
+        set -e
+    done
+    echo "═══════════════════════════════"
+    echo "Total de subsistemas con hallazgos: $total / $(ls -d "$ROOT"/puntobot*/ 2>/dev/null | wc -l | tr -d ' ')"
+fi

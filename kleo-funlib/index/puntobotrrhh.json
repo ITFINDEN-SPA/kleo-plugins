@@ -1,0 +1,3171 @@
+{
+    "subsystem": "puntobotrrhh",
+    "scanned_at": "2026-08-28T13:55:10+00:00",
+    "app_dirs": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app"
+    ],
+    "functions": [
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 13
+        },
+        {
+            "name": "showLogin",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "showLogin(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 17
+        },
+        {
+            "name": "showRegister",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "View",
+            "signature": "showRegister(): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 22
+        },
+        {
+            "name": "doLogin",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "doLogin(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 27
+        },
+        {
+            "name": "doRegister",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "doRegister(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 48
+        },
+        {
+            "name": "doLogout",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "doLogout(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 81
+        },
+        {
+            "name": "tokenCookie",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "\\Symfony\\Component\\HttpFoundation\\Cookie",
+            "signature": "tokenCookie(string $token): \\Symfony\\Component\\HttpFoundation\\Cookie",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 95
+        },
+        {
+            "name": "forgetTokenCookie",
+            "type": "method",
+            "class": "AuthController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "\\Symfony\\Component\\HttpFoundation\\Cookie",
+            "signature": "forgetTokenCookie(): \\Symfony\\Component\\HttpFoundation\\Cookie",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+            "line": 110
+        },
+        {
+            "name": "rrhhContext",
+            "type": "method",
+            "class": "InteractsWithRrhhApi",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "array",
+            "signature": "rrhhContext(Request $request): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/Concerns/InteractsWithRrhhApi.php",
+            "line": 9
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "InteractsWithRrhhApi",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/Concerns/InteractsWithRrhhApi.php",
+            "line": 19
+        },
+        {
+            "name": "resolvedCompany",
+            "type": "method",
+            "class": "InteractsWithRrhhApi",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$context",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $context"
+                }
+            ],
+            "return_type": "array",
+            "signature": "resolvedCompany(Request $request, array $context): array",
+            "summary": null,
+            "doc": "/** @return array{id: int, name: string} */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/Concerns/InteractsWithRrhhApi.php",
+            "line": 32
+        },
+        {
+            "name": "requireCompanyId",
+            "type": "method",
+            "class": "InteractsWithRrhhApi",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$context",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $context"
+                }
+            ],
+            "return_type": "int",
+            "signature": "requireCompanyId(array $context): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/Concerns/InteractsWithRrhhApi.php",
+            "line": 56
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "DashboardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiRrhhService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiRrhhService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiRrhhService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/DashboardController.php",
+            "line": 14
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "DashboardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "index(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/DashboardController.php",
+            "line": 18
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiRrhhService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiRrhhService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiRrhhService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 15
+        },
+        {
+            "name": "index",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "index(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 19
+        },
+        {
+            "name": "create",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "create(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 49
+        },
+        {
+            "name": "store",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "store(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 63
+        },
+        {
+            "name": "edit",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View",
+            "signature": "edit(Request $request, string $id): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 77
+        },
+        {
+            "name": "update",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "update(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 96
+        },
+        {
+            "name": "destroy",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "destroy(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 110
+        },
+        {
+            "name": "validatedEmployee",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "array",
+            "signature": "validatedEmployee(Request $request): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 123
+        },
+        {
+            "name": "listOptions",
+            "type": "method",
+            "class": "EmployeeController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "listOptions(array $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+            "line": 171
+        },
+        {
+            "name": "show",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "show(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 12
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 83
+        },
+        {
+            "name": "settings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "settings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 13
+        },
+        {
+            "name": "updateSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateSettings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 18
+        },
+        {
+            "name": "ping",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "ping(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 23
+        },
+        {
+            "name": "unlock",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "unlock(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 30
+        },
+        {
+            "name": "online",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "online(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 35
+        },
+        {
+            "name": "revoke",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$jti",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $jti"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "revoke(Request $request, string $jti): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 44
+        },
+        {
+            "name": "globalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "globalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 53
+        },
+        {
+            "name": "updateGlobalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateGlobalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 62
+        },
+        {
+            "name": "proxy",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "proxy(Request $request, string $method, string $endpoint, array $data = []): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 71
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 109
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$sidebar",
+                    "type": "PuntobotSidebarService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly PuntobotSidebarService $sidebar"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(PuntobotSidebarService $sidebar)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 11
+        },
+        {
+            "name": "activeSubsystems",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "activeSubsystems(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 15
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AuthMiddleware",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthMiddleware.php",
+            "line": 17
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "AuthMiddleware",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthMiddleware.php",
+            "line": 21
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiRrhhService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiRrhhService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiRrhhService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 17
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 21
+        },
+        {
+            "name": "redirectToLogin",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\RedirectResponse",
+            "signature": "redirectToLogin(Request $request): \\Illuminate\\Http\\RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 72
+        },
+        {
+            "name": "canonicalAppUrl",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "string",
+            "signature": "canonicalAppUrl(Request $request): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthSSO.php",
+            "line": 82
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "CheckSubsystemMaintenance",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/CheckSubsystemMaintenance.php",
+            "line": 13
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "CheckSubsystemMaintenance",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/CheckSubsystemMaintenance.php",
+            "line": 52
+        },
+        {
+            "name": "warmPuntobotSidebar",
+            "type": "method",
+            "class": "WarmsPuntobotSidebar",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmPuntobotSidebar(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+            "line": 10
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "EnsurePuntobotToken",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+            "line": 11
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "GuestMiddleware",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/GuestMiddleware.php",
+            "line": 13
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "GuestMiddleware",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/GuestMiddleware.php",
+            "line": 17
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "PruneSharedSessionCookies",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/PruneSharedSessionCookies.php",
+            "line": 13
+        },
+        {
+            "name": "casts",
+            "type": "method",
+            "class": "User",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "casts(): array",
+            "summary": "Get the attributes that should be cast.",
+            "doc": "/**\n     * Get the attributes that should be cast.\n     *\n     * @return array<string, string>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Models/User.php",
+            "line": 41
+        },
+        {
+            "name": "register",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "register(): void",
+            "summary": "Register any application services.",
+            "doc": "/**\n     * Register any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Providers/AppServiceProvider.php",
+            "line": 12
+        },
+        {
+            "name": "boot",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "boot(): void",
+            "summary": "Bootstrap any application services.",
+            "doc": "/**\n     * Bootstrap any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Providers/AppServiceProvider.php",
+            "line": 20
+        },
+        {
+            "name": "getCurrentUser",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getCurrentUser(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 11
+        },
+        {
+            "name": "getSessionContext",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "?int",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?int $companyId  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getSessionContext(string $token, ?int $companyId = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 16
+        },
+        {
+            "name": "logout",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "logout(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 23
+        },
+        {
+            "name": "getDashboard",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getDashboard(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 28
+        },
+        {
+            "name": "getEmployees",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$filters",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $filters  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getEmployees(int $companyId, string $token, array $filters = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 33
+        },
+        {
+            "name": "getEmployee",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getEmployee(string $id, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 38
+        },
+        {
+            "name": "createEmployee",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createEmployee(array $payload, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 43
+        },
+        {
+            "name": "updateEmployee",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateEmployee(string $id, array $payload, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 48
+        },
+        {
+            "name": "deleteEmployee",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteEmployee(string $id, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 53
+        },
+        {
+            "name": "getDepartments",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$filters",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $filters  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getDepartments(int $companyId, string $token, array $filters = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 58
+        },
+        {
+            "name": "createDepartment",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createDepartment(array $payload, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 63
+        },
+        {
+            "name": "updateDepartment",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateDepartment(string $id, array $payload, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 68
+        },
+        {
+            "name": "deleteDepartment",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteDepartment(string $id, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 73
+        },
+        {
+            "name": "getPositions",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$filters",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $filters  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getPositions(int $companyId, string $token, array $filters = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 78
+        },
+        {
+            "name": "createPosition",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createPosition(array $payload, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 83
+        },
+        {
+            "name": "updatePosition",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updatePosition(string $id, array $payload, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 88
+        },
+        {
+            "name": "deletePosition",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deletePosition(string $id, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 93
+        },
+        {
+            "name": "extractUser",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "extractUser(array $response): ?array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 98
+        },
+        {
+            "name": "errorMessage",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                },
+                {
+                    "name": "$fallback",
+                    "type": "string",
+                    "default": "'No se pudo completar la operación.'",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $fallback  =  'No se pudo completar la operación.'"
+                }
+            ],
+            "return_type": "string",
+            "signature": "errorMessage(array $response, string $fallback = 'No se pudo completar la operación.'): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 107
+        },
+        {
+            "name": "request",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "request(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 120
+        },
+        {
+            "name": "authRequest",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "authRequest(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 140
+        },
+        {
+            "name": "authUrl",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "authUrl(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 160
+        },
+        {
+            "name": "url",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "url(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 165
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 173
+        },
+        {
+            "name": "normalizeResponse",
+            "type": "method",
+            "class": "ApiRrhhService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "Response",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Response $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeResponse(Response $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+            "line": 186
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$baseUrl",
+                    "type": "string",
+                    "default": "''",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "\n        private readonly string $baseUrl  =  ''"
+                },
+                {
+                    "name": "$prefix",
+                    "type": "string",
+                    "default": "''",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "\n        private readonly string $prefix  =  ''"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(string $baseUrl = '', string $prefix = '')",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 11
+        },
+        {
+            "name": "login",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$email",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $email"
+                },
+                {
+                    "name": "$password",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $password"
+                }
+            ],
+            "return_type": "array",
+            "signature": "login(string $email, string $password): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 17
+        },
+        {
+            "name": "register",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$name",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $name"
+                },
+                {
+                    "name": "$email",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $email"
+                },
+                {
+                    "name": "$password",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $password"
+                }
+            ],
+            "return_type": "array",
+            "signature": "register(string $name, string $email, string $password): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 25
+        },
+        {
+            "name": "logout",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "logout(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 35
+        },
+        {
+            "name": "getUser",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getUser(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 40
+        },
+        {
+            "name": "refreshToken",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "refreshToken(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 45
+        },
+        {
+            "name": "request",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "request(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 50
+        },
+        {
+            "name": "extractToken",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "?string",
+            "signature": "extractToken(array $response): ?string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 78
+        },
+        {
+            "name": "extractUser",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "extractUser(array $response): ?array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 88
+        },
+        {
+            "name": "errorMessage",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                },
+                {
+                    "name": "$fallback",
+                    "type": "string",
+                    "default": "'Ocurrió un error al comunicarse con la API.'",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $fallback  =  'Ocurrió un error al comunicarse con la API.'"
+                }
+            ],
+            "return_type": "string",
+            "signature": "errorMessage(array $response, string $fallback = 'Ocurrió un error al comunicarse con la API.'): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 98
+        },
+        {
+            "name": "authRequest",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "authRequest(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 114
+        },
+        {
+            "name": "authUrl",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "authUrl(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 142
+        },
+        {
+            "name": "url",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "url(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 148
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 157
+        },
+        {
+            "name": "normalizeResponse",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "Response",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Response $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeResponse(Response $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+            "line": 175
+        },
+        {
+            "name": "getFromSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "getFromSession(Request $request): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 18
+        },
+        {
+            "name": "warmSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmSession(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 40
+        },
+        {
+            "name": "resolvePayload",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolvePayload(Request $request, string $token): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array{subsistemas: array<int, array<string, mixed>>}|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 59
+        },
+        {
+            "name": "fallbackItems",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "fallbackItems(): array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 82
+        },
+        {
+            "name": "storeInSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$items",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $items"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "void",
+            "signature": "storeInSession(Request $request, array $items, int $companyId): void",
+            "summary": null,
+            "doc": "/**\n     * @param array<int, array<string, mixed>> $items\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 90
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 99
+        },
+        {
+            "name": "fetchFromApi",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "fetchFromApi(string $token, int $companyId): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 109
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 145
+        }
+    ],
+    "classes": [
+        "AuthController",
+        "InteractsWithRrhhApi",
+        "Controller",
+        "DashboardController",
+        "EmployeeController",
+        "PuntobotSessionContextController",
+        "PuntobotSessionGuardController",
+        "PuntobotSidebarController",
+        "AuthMiddleware",
+        "AuthSSO",
+        "CheckSubsystemMaintenance",
+        "WarmsPuntobotSidebar",
+        "EnsurePuntobotToken",
+        "GuestMiddleware",
+        "PruneSharedSessionCookies",
+        "User",
+        "AppServiceProvider",
+        "ApiRrhhService",
+        "ApiService",
+        "PuntobotSidebarService"
+    ],
+    "routes": [
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": "DashboardController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/empleados",
+            "action": "EmployeeController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/empleados/nuevo",
+            "action": "EmployeeController::class, 'create'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/empleados",
+            "action": "EmployeeController::class, 'store'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/empleados/{id}/editar",
+            "action": "EmployeeController::class, 'edit'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/empleados/{id}",
+            "action": "EmployeeController::class, 'update'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/empleados/{id}",
+            "action": "EmployeeController::class, 'destroy'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/logout",
+            "action": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/subsistemas/activos",
+            "action": "\\App\\Http\\Controllers\\PuntobotSidebarController::class, 'activeSubsystems'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session-context",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionContextController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'settings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'updateSettings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/ping",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'ping'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/unlock",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'unlock'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/routes/web.php"
+        }
+    ],
+    "files": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/AuthController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/Concerns/InteractsWithRrhhApi.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/Controller.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/DashboardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/EmployeeController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionContextController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSessionGuardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthMiddleware.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/AuthSSO.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/CheckSubsystemMaintenance.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/GuestMiddleware.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Http/Middleware/PruneSharedSessionCookies.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Models/User.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Providers/AppServiceProvider.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiRrhhService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/ApiService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotrrhh/public_html/app/Services/PuntobotSidebarService.php"
+    ],
+    "function_count": 101,
+    "route_count": 14
+}

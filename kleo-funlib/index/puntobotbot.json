@@ -1,0 +1,2452 @@
+{
+    "subsystem": "puntobotbot",
+    "scanned_at": "2026-08-28T13:55:10+00:00",
+    "app_dirs": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app"
+    ],
+    "functions": [
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiBotService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiBotService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiBotService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 12
+        },
+        {
+            "name": "dashboard",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "dashboard(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 16
+        },
+        {
+            "name": "configs",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "configs(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 38
+        },
+        {
+            "name": "storeConfig",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "storeConfig(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 51
+        },
+        {
+            "name": "editConfig",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View",
+            "signature": "editConfig(Request $request, string $id): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 76
+        },
+        {
+            "name": "updateConfig",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "updateConfig(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 91
+        },
+        {
+            "name": "destroyConfig",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "destroyConfig(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 116
+        },
+        {
+            "name": "conversations",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "conversations(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 128
+        },
+        {
+            "name": "storeConversation",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "storeConversation(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 143
+        },
+        {
+            "name": "editConversation",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View",
+            "signature": "editConversation(Request $request, string $id): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 163
+        },
+        {
+            "name": "updateConversation",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "updateConversation(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 180
+        },
+        {
+            "name": "destroyConversation",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "destroyConversation(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 213
+        },
+        {
+            "name": "templates",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "templates(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 225
+        },
+        {
+            "name": "storeTemplate",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "storeTemplate(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 238
+        },
+        {
+            "name": "editTemplate",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View",
+            "signature": "editTemplate(Request $request, string $id): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 261
+        },
+        {
+            "name": "updateTemplate",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "updateTemplate(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 276
+        },
+        {
+            "name": "destroyTemplate",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "destroyTemplate(Request $request, string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 299
+        },
+        {
+            "name": "showConversation",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "showConversation(string $id): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 311
+        },
+        {
+            "name": "chat",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "View",
+            "signature": "chat(Request $request, string $id): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 316
+        },
+        {
+            "name": "chatSendMessage",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\JsonResponse",
+            "signature": "chatSendMessage(Request $request, string $id): \\Illuminate\\Http\\JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 335
+        },
+        {
+            "name": "chatSendAgentMessage",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\JsonResponse",
+            "signature": "chatSendAgentMessage(Request $request, string $id): \\Illuminate\\Http\\JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 346
+        },
+        {
+            "name": "broadcastIndex",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "View",
+            "signature": "broadcastIndex(Request $request): View",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 357
+        },
+        {
+            "name": "broadcastSend",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "broadcastSend(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 369
+        },
+        {
+            "name": "context",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "array",
+            "signature": "context(Request $request): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 423
+        },
+        {
+            "name": "findRow",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                },
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $id"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "findRow(array $response, string $id): ?array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 447
+        },
+        {
+            "name": "behaviorConfigFromRequest",
+            "type": "method",
+            "class": "BotController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "array",
+            "signature": "behaviorConfigFromRequest(Request $request): array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+            "line": 459
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$sidebar",
+                    "type": "PuntobotSidebarService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly PuntobotSidebarService $sidebar"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(PuntobotSidebarService $sidebar)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 11
+        },
+        {
+            "name": "activeSubsystems",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "activeSubsystems(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 15
+        },
+        {
+            "name": "warmPuntobotSidebar",
+            "type": "method",
+            "class": "WarmsPuntobotSidebar",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmPuntobotSidebar(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+            "line": 10
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "EnsurePuntobotToken",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+            "line": 11
+        },
+        {
+            "name": "getCurrentUser",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getCurrentUser(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 11
+        },
+        {
+            "name": "getSessionContext",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "?int",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?int $companyId  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getSessionContext(string $token, ?int $companyId = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 16
+        },
+        {
+            "name": "logout",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "logout(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 27
+        },
+        {
+            "name": "getConfigs",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getConfigs(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 32
+        },
+        {
+            "name": "createConfig",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createConfig(array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 37
+        },
+        {
+            "name": "updateConfig",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateConfig(string $id, array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 42
+        },
+        {
+            "name": "deleteConfig",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteConfig(string $id, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 47
+        },
+        {
+            "name": "getConversations",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getConversations(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 52
+        },
+        {
+            "name": "createConversation",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createConversation(array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 57
+        },
+        {
+            "name": "updateConversation",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateConversation(string $id, array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 62
+        },
+        {
+            "name": "deleteConversation",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteConversation(string $id, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 67
+        },
+        {
+            "name": "getTemplates",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getTemplates(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 72
+        },
+        {
+            "name": "createTemplate",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createTemplate(array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 77
+        },
+        {
+            "name": "updateTemplate",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateTemplate(string $id, array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 82
+        },
+        {
+            "name": "deleteTemplate",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteTemplate(string $id, int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 87
+        },
+        {
+            "name": "getKnowledgeBases",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getKnowledgeBases(int $companyId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 92
+        },
+        {
+            "name": "createKnowledgeBase",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createKnowledgeBase(array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 97
+        },
+        {
+            "name": "updateKnowledgeBase",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateKnowledgeBase(string $id, array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 102
+        },
+        {
+            "name": "deleteKnowledgeBase",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteKnowledgeBase(string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 107
+        },
+        {
+            "name": "createKnowledgeDocument",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "createKnowledgeDocument(array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 112
+        },
+        {
+            "name": "updateKnowledgeDocument",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "updateKnowledgeDocument(string $id, array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 117
+        },
+        {
+            "name": "deleteKnowledgeDocument",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$id",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $id"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "deleteKnowledgeDocument(string $id, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 122
+        },
+        {
+            "name": "getHistory",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$conversationId",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $conversationId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getHistory(string $conversationId, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 127
+        },
+        {
+            "name": "sendMessage",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$conversationId",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $conversationId"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "sendMessage(string $conversationId, array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 132
+        },
+        {
+            "name": "sendAgentMessage",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$conversationId",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $conversationId"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "sendAgentMessage(string $conversationId, array $payload, string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 137
+        },
+        {
+            "name": "extractUser",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "extractUser(array $response): ?array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 142
+        },
+        {
+            "name": "request",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "request(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 151
+        },
+        {
+            "name": "authRequest",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "authRequest(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 178
+        },
+        {
+            "name": "authUrl",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "authUrl(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 206
+        },
+        {
+            "name": "url",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "url(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 212
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 220
+        },
+        {
+            "name": "normalizeResponse",
+            "type": "method",
+            "class": "ApiBotService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "Response",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Response $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeResponse(Response $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+            "line": 238
+        },
+        {
+            "name": "getFromSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "getFromSession(Request $request): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 18
+        },
+        {
+            "name": "warmSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmSession(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 40
+        },
+        {
+            "name": "resolvePayload",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolvePayload(Request $request, string $token): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array{subsistemas: array<int, array<string, mixed>>}|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 59
+        },
+        {
+            "name": "fallbackItems",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "fallbackItems(): array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 82
+        },
+        {
+            "name": "storeInSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$items",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $items"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "void",
+            "signature": "storeInSession(Request $request, array $items, int $companyId): void",
+            "summary": null,
+            "doc": "/**\n     * @param array<int, array<string, mixed>> $items\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 90
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 99
+        },
+        {
+            "name": "fetchFromApi",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "fetchFromApi(string $token, int $companyId): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 109
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php",
+            "line": 145
+        }
+    ],
+    "classes": [
+        "BotController",
+        "PuntobotSidebarController",
+        "WarmsPuntobotSidebar",
+        "EnsurePuntobotToken",
+        "ApiBotService",
+        "PuntobotSidebarService"
+    ],
+    "routes": [
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": "BotController::class, 'dashboard'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/configuraciones",
+            "action": "BotController::class, 'configs'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/configuraciones",
+            "action": "BotController::class, 'storeConfig'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/configuraciones/{id}/edit",
+            "action": "BotController::class, 'editConfig'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/configuraciones/{id}",
+            "action": "BotController::class, 'updateConfig'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/configuraciones/{id}",
+            "action": "BotController::class, 'destroyConfig'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/conversaciones",
+            "action": "BotController::class, 'conversations'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/conversaciones",
+            "action": "BotController::class, 'storeConversation'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/conversaciones/{id}/chat",
+            "action": "BotController::class, 'chat'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/conversaciones/{id}/chat/message",
+            "action": "BotController::class, 'chatSendMessage'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/conversaciones/{id}/chat/agent-message",
+            "action": "BotController::class, 'chatSendAgentMessage'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/conversaciones/{id}/edit",
+            "action": "BotController::class, 'editConversation'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/conversaciones/{id}",
+            "action": "BotController::class, 'showConversation'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/conversaciones/{id}",
+            "action": "BotController::class, 'updateConversation'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/conversaciones/{id}",
+            "action": "BotController::class, 'destroyConversation'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/broadcast",
+            "action": "BotController::class, 'broadcastIndex'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/broadcast",
+            "action": "BotController::class, 'broadcastSend'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/templates",
+            "action": "BotController::class, 'templates'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/templates",
+            "action": "BotController::class, 'storeTemplate'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/templates/{id}/edit",
+            "action": "BotController::class, 'editTemplate'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/templates/{id}",
+            "action": "BotController::class, 'updateTemplate'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/templates/{id}",
+            "action": "BotController::class, 'destroyTemplate'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/knowledge",
+            "action": "\\App\\Http\\Controllers\\BotKnowledgeController::class, 'index'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/knowledge/bases",
+            "action": "\\App\\Http\\Controllers\\BotKnowledgeController::class, 'storeBase'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/knowledge/bases/{id}",
+            "action": "\\App\\Http\\Controllers\\BotKnowledgeController::class, 'updateBase'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/knowledge/bases/{id}",
+            "action": "\\App\\Http\\Controllers\\BotKnowledgeController::class, 'destroyBase'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/knowledge/documents",
+            "action": "\\App\\Http\\Controllers\\BotKnowledgeController::class, 'storeDocument'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/knowledge/documents/{id}",
+            "action": "\\App\\Http\\Controllers\\BotKnowledgeController::class, 'updateDocument'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "DELETE",
+            "uri": "/knowledge/documents/{id}",
+            "action": "\\App\\Http\\Controllers\\BotKnowledgeController::class, 'destroyDocument'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/subsistemas/activos",
+            "action": "\\App\\Http\\Controllers\\PuntobotSidebarController::class, 'activeSubsystems'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session-context",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionContextController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'settings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'updateSettings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/ping",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'ping'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/unlock",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'unlock'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/routes/web.php"
+        }
+    ],
+    "files": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/BotController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Controllers/PuntobotSidebarController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Http/Middleware/EnsurePuntobotToken.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/ApiBotService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotbot/public_html/app/Services/PuntobotSidebarService.php"
+    ],
+    "function_count": 70,
+    "route_count": 35
+}

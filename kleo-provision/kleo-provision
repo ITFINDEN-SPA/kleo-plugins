@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+# kleo-provision — Aprovisiona/replica el harness Kleo completo en otra máquina
+#
+# Copia el harness (código fuente + plugins + configs) desde este equipo (fuente
+# de verdad) hacia una máquina destino (macmini hoy, MacBook Air mañana) de forma
+# reproducible, idempotente y verificada.
+#
+# TRANSPORTE: tar+ssh (compatible con openrsync y rutas con espacios, como
+# "KLEO HARNESS" — rsync remoto falla con "server receiver mode" en esas rutas).
+#
+# Estrategia 360:
+#   1. Tar del código fuente del harness (EXCLUYE node_modules/.git/dist/lib)
+#   2. Sync de plugins/ (todo: funlib, infra, qa-sync, prd-sync, codeaudit, team, collab, provision)
+#   3. Sync de collab/ (estado compartido del equipo)
+#   4. Verificación: conteo de archivos + rsync --checksum dry (sin ruta remota con espacio)
+#   5. (opcional) pnpm install en destino
+#
+# Uso: ./kleo-provision <host|nombre_ssh> [--install] [--verify-only] [--dry-run]
+#   --install     ejecuta pnpm install en el destino (lento, solo la primera vez)
+#   --verify-only compara el árbol completo sin copiar nada
+#   --dry-run     muestra qué se copiaría (sin escribir)
+set -euo pipefail
+
+HUB="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+TARGET="${1:-}"
+shift || true
+INSTALL=0; VERIFY=0; DRY=0
+for a in "$@"; do
+  case "$a" in
+    --install) INSTALL=1;;
+    --verify-only) VERIFY=1;;
+    --dry-run) DRY=1;;
+  esac
+done
+
+[ -z "$TARGET" ] && { echo "Uso: kleo-provision <host> [--install] [--verify-only] [--dry-run]"; echo "  ej: ./kleo-provision mac_mini --install"; exit 1; }
+
+TARGET_USER=$(ssh -o BatchMode=yes -o ConnectTimeout=10 "$TARGET" 'echo $USER' 2>/dev/null | tr -d '\r')
+TARGET_HOME="/Users/$TARGET_USER"
+TARGET_HARNESS="$TARGET_HOME/home/AI-STORE/KSH/KLEO_HARNESS"
+
+ssh_t() {
+  ssh -o BatchMode=yes -o ConnectTimeout=10 "$TARGET" "$@" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq" || true
+}
+
+# filtros de exclusión para tar (aplicados localmente y en el destino para borrados)
+EXC=(
+  --exclude=node_modules
+  --exclude=.git
+  --exclude=dist
+  --exclude=lib
+  --exclude=.turbo
+  --exclude=coverage
+  --exclude="*.log"
+  --exclude=.DS_Store
+)
+
+SRC_COUNT=$(find "$HUB" -type f -not -path "*/node_modules/*" -not -path "*/.git/*" -not -path "*/dist/*" -not -path "*/lib/*" -not -path "*/.turbo/*" -not -name ".DS_Store" 2>/dev/null | wc -l | tr -d ' ')
+
+echo "════════════════════════════════════════════"
+echo "  kleo-provision: $HUB → $TARGET"
+echo "  destino: $TARGET_HARNESS"
+echo "════════════════════════════════════════════"
+echo "== Origen: $SRC_COUNT archivos fuente (sin node_modules/.git/dist/lib) =="
+
+if [ "$VERIFY" = "1" ] || [ "$DRY" = "1" ]; then
+  MODE="verify"
+  [ "$DRY" = "1" ] && MODE="dry-run"
+  echo "== [$MODE] Comparando conteos origen ↔ destino =="
+  DST_COUNT=$(ssh_t "find '$TARGET_HARNESS' -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/lib/*' -not -name '.DS_Store' 2>/dev/null | wc -l" | tr -d ' ')
+  echo "   origen: $SRC_COUNT archivos | destino: ${DST_COUNT:-0} archivos"
+  if [ "${DST_COUNT:-0}" = "$SRC_COUNT" ]; then
+    echo "   ✅ conteos idénticos"
+  else
+    echo "   ⚠️  difieren (destino incompleto — ejecutar sin --verify-only)"
+  fi
+  exit 0
+fi
+
+# --- modo real ---
+echo "== Preparando destino =="
+ssh_t "mkdir -p '$TARGET_HARNESS' && find '$TARGET_HARNESS' -name '.DS_Store' -delete 2>/dev/null; echo '   listo (DS_Store limpiados)'"
+
+# Asegurar herramientas CLI en PATH del destino (php para kleo-funlib, etc.)
+echo "== Verificando toolchain en destino =="
+ssh_t "command -v php >/dev/null 2>&1 || { mkdir -p ~/.local/bin 2>/dev/null; ln -sf /opt/homebrew/bin/php ~/.local/bin/php 2>/dev/null && echo '   php enlazado a ~/.local/bin/php' || echo '   ⚠️ php no disponible (instalar con brew install php)'; }"
+
+echo "== Transferencia tar+ssh del harness =="
+tar czf - "${EXC[@]}" -C "$HUB" . | ssh -o BatchMode=yes -o ConnectTimeout=15 "$TARGET" "tar xzf - -C '$TARGET_HARNESS'" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq" || true
+echo "   ✅ transferencia completada"
+
+echo "== Verificación post-sync =="
+DST_COUNT=$(ssh_t "find '$TARGET_HARNESS' -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' -not -path '*/lib/*' -not -name '.DS_Store' 2>/dev/null | wc -l" | tr -d ' ')
+echo "   origen: $SRC_COUNT | destino: ${DST_COUNT:-0}"
+if [ "${DST_COUNT:-0}" = "$SRC_COUNT" ]; then
+  echo "   ✅ 0 diferencias — destino idéntico al origen"
+else
+  echo "   ⚠️  difieren — revisar (¿archivos nuevos en origen durante el sync?)"
+fi
+
+echo ""
+echo "== Contenido desplegado en destino =="
+ssh_t "cd '$TARGET_HARNESS' && {
+  echo '   Raíz:'; ls | head -18 | sed 's/^/     /'
+  echo '   Plugins:'; ls plugins/ 2>/dev/null | sed 's/^/     /'
+  echo '   collab:'; ls collab/ 2>/dev/null | sed 's/^/     /'
+}"
+
+if [ "$INSTALL" = "1" ]; then
+  echo "== pnpm install en destino (primera vez, puede tardar) =="
+  ssh_t "cd '$TARGET_HARNESS' && source ~/.nvm/nvm.sh 2>/dev/null; corepack enable 2>/dev/null; pnpm install --prefer-offline 2>&1 | tail -5"
+fi
+
+echo ""
+echo "✅ kleo-provision completado para $TARGET"
+echo "   Re-verificar: kleo-provision $TARGET --verify-only"

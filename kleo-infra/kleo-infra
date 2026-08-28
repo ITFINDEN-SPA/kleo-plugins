@@ -1,0 +1,291 @@
+#!/usr/bin/env bash
+# kleo-infra — Administración de infraestructura web multi-entorno
+#
+# Entornos:
+#   prod     → server148 (cPanel) — SOLO LECTURA de vhosts; create vía userdata+buildhttpdconf
+#   macbook  → este equipo (Apache Homebrew local)
+#   macmini  → Mac mini (Apache Homebrew local)
+#
+# ⚠️  REGLA cPanel: NUNCA editar /etc/apache2/conf/httpd.conf a mano.
+#     cPanel regenera ese archivo; los cambios manuales se pierden o rompen el panel.
+#     Los vhosts de cPanel se administran con:
+#       - whmapi1 / UAPI (cuentas y dominios)
+#       - /etc/apache2/conf.d/userdata/std/2_4/<usuario>/<dominio>/*.conf + buildhttpdconf
+#
+# Uso: ./kleo-infra --env <prod|macbook|macmini> <comando> [args...]
+#   list                     Listar vhosts
+#   search <texto>           Buscar vhosts
+#   show <dominio>           Detalle de un vhost + SSL (prod)
+#   check                    configtest Apache + estado
+#   folders [usuario]        Carpetas (prod: cuentas; local: home del equipo)
+#   logs <dominio> [n]       Últimos errores del dominio
+#   usage <dominio>          Tamaño del docroot
+#   create --domain X --docroot RUTA [--fcgi PUERTO] [--dry-run]
+#                            Crear vhost (local: archivo en vhosts/; prod: userdata+buildhttpdconf)
+#   help                     Esta ayuda
+set -euo pipefail
+
+ENV="${KLEO_INFRA_ENV:-}"
+# parsear --env antes del comando
+ARGS=()
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --env) ENV="$2"; shift 2;;
+    -E) ENV="$2"; shift 2;;
+    *) ARGS+=("$1"); shift;;
+  esac
+done
+set -- "${ARGS[@]}"
+
+cmd="${1:-help}"
+shift || true
+
+case "$ENV" in
+  prod)
+    HOST="vps148.itfinden.com"
+    CONF="/etc/apache2/conf/httpd.conf"
+    HOME_BASE="/home"
+    VHOSTS_GLOB="$CONF"
+    ;;
+  macbook)
+    HOST=""
+    CONF="/opt/homebrew/etc/httpd/httpd.conf"
+    HOME_BASE="$HOME"
+    VHOSTS_GLOB="/opt/homebrew/etc/httpd/vhosts/*.conf"
+    VHOSTS_DIR="/opt/homebrew/etc/httpd/vhosts"
+    ;;
+  macmini)
+    HOST="mac_mini"
+    CONF="/opt/homebrew/etc/httpd/httpd.conf"
+    HOME_BASE="/Users/friedrich"
+    VHOSTS_GLOB="/opt/homebrew/etc/httpd/vhosts/*.conf"
+    VHOSTS_DIR="/opt/homebrew/etc/httpd/vhosts"
+    ;;
+  *)
+    echo "Uso: kleo-infra --env <prod|macbook|macmini> <comando> [args...]"
+    echo "  (o exporta KLEO_INFRA_ENV=prod|macbook|macmini)"
+    exit 1
+    ;;
+esac
+
+# ejecuta un comando en el host remoto (o local si HOST vacío)
+run() {
+  if [ -n "$HOST" ]; then
+    ssh -o BatchMode=yes -o ConnectTimeout=10 "$HOST" "$@" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq" || true
+  else
+    bash -c "$*" 2>&1 || true
+  fi
+}
+
+case "$cmd" in
+  list)
+    echo "== vhosts ($ENV) =="
+    if [ "$ENV" = "prod" ]; then
+      run 'grep -E "^<VirtualHost|ServerName |DocumentRoot " '"$CONF"' | sed -E "s/^[[:space:]]+//; s/<VirtualHost ([^>]+)>/\1|/; s/ServerName ([^ ]+).*/\1/; s/DocumentRoot ([^ ]+).*/\1/" | paste - - - | column -t -s"|" | head -120'
+    else
+      run 'echo "--- archivos de vhosts en '"$VHOSTS_DIR"' ---"; ls -1 '"$VHOSTS_DIR"' 2>/dev/null | grep -v "\.bak" | head -60; echo "--- dominios definidos ---"; grep -hE "ServerName|ServerAlias|DocumentRoot" '"$VHOSTS_GLOB"' 2>/dev/null | sed -E "s/^[[:space:]]+//" | head -90'
+    fi
+    ;;
+  search)
+    term="${1:-}"
+    [ -z "$term" ] && { echo "Uso: kleo-infra search <texto>"; exit 1; }
+    if [ "$ENV" = "prod" ]; then
+      run 'grep -E "^<VirtualHost|ServerName|ServerAlias|DocumentRoot" '"$CONF"' | grep -i "'"$term"'" | sed -E "s/^[[:space:]]+//" | head -60'
+    else
+      run 'grep -l "ServerName.*'"$term"'" '"$VHOSTS_GLOB"' 2>/dev/null | head -10 | while read f; do echo "== $f =="; grep -E "ServerName|ServerAlias|DocumentRoot" "$f" | sed -E "s/^[[:space:]]+//"; done'
+    fi
+    ;;
+  show)
+    dom="${1:-}"
+    [ -z "$dom" ] && { echo "Uso: kleo-infra show <dominio>"; exit 1; }
+    if [ "$ENV" = "prod" ]; then
+      run 'awk "/<VirtualHost/ { buf=\$0; next } { buf=buf \"\n\" \$0 } /<\/VirtualHost>/ { if (index(buf, \"ServerName '"$dom"'\") > 0) print buf \"\n---\" }" '"$CONF"' | head -80; echo; echo "=== SSL ==="; echo | timeout 5 openssl s_client -connect '"$dom"':443 -servername '"$dom"' 2>/dev/null | openssl x509 -noout -subject -dates 2>/dev/null || echo "(sin SSL)"
+      echo "=== cPanel userdata ==="; grep -rh "ServerName '"$dom"'" /etc/apache2/conf.d/userdata/ 2>/dev/null | head -3 || true'
+    else
+      run 'f=$(grep -l "ServerName.*'"$dom"'[^.]" '"$VHOSTS_GLOB"' 2>/dev/null | head -1); [ -z "$f" ] && f=$(grep -l "ServerName.*'"$dom"'" '"$VHOSTS_GLOB"' 2>/dev/null | head -1); if [ -n "$f" ]; then echo "== $f =="; cat "$f"; else echo "No se encontró vhost para '"$dom"' en '"$VHOSTS_DIR"'"; fi'
+    fi
+    ;;
+  check)
+    echo "== Apache check ($ENV) =="
+    run 'echo "--- versión ---"; httpd -v 2>&1 | head -1; echo "--- configtest ---"; httpd -t 2>&1 | tail -3; echo "--- estado ---"; if [ -n "'"$HOST"'" ]; then systemctl is-active httpd 2>/dev/null || service httpd status 2>&1 | head -2; else pgrep -x httpd >/dev/null && echo "httpd corriendo (pid $(pgrep -x httpd | head -1))" || echo "httpd NO está corriendo"; fi'
+    ;;
+  folders)
+    user="${1:-}"
+    if [ "$ENV" = "prod" ]; then
+      if [ -n "$user" ]; then
+        run 'echo "=== /home/'"$user"' ==="; ls -la /home/'"$user"' 2>/dev/null | grep -vE "^total" | head -20; echo "=== public_html ==="; ls /home/'"$user"'/public_html 2>/dev/null | head -25; echo "=== symlinks ==="; find /home/'"$user"' -maxdepth 1 -type l -exec ls -la {} \; 2>/dev/null | head -8'
+      else
+        run 'for d in /home/*/public_html; do [ -d "$d" ] && basename $(dirname "$d"); done | sort'
+      fi
+    else
+      if [ -n "$user" ]; then
+        run 'echo "=== '"$HOME_BASE"'/home/'"$user"' ==="; ls -la '"$HOME_BASE"'/home/'"$user"' 2>/dev/null | grep -vE "^total" | head -15 || echo "(no existe)"'
+      else
+        run 'ls -d '"$HOME_BASE"'/home/puntobot* 2>/dev/null | xargs -n1 basename'
+      fi
+    fi
+    ;;
+  logs)
+    dom="${1:-}"; n="${2:-20}"
+    [ -z "$dom" ] && { echo "Uso: kleo-infra logs <dominio> [n]"; exit 1; }
+    if [ "$ENV" = "prod" ]; then
+      run 'acc=$(awk -v d="'"$dom"'" "
+        /^<VirtualHost/ { buf=\$0; next }
+        { buf=buf \"\n\" \$0 }
+        /<\/VirtualHost>/ {
+          if (index(buf, \"ServerName \" d) > 0) {
+            if (match(buf, /DocumentRoot \/home\/[^\/]+/)) { print substr(buf, RSTART+19, RLENGTH-19) }
+          }
+          buf=\"\"
+        }" '"$CONF"' | head -1)
+        echo "Cuenta: ${acc:-?}"
+        for f in /home/"${acc:-x}"/logs/*error*.log; do
+          [ -f "$f" ] && { echo "--- $f ---"; tail -n '"$n"' "$f" | grep -vE "^[[:space:]]*$" | tail -'"$n"'; }
+        done'
+    else
+      run 'echo "=== logs apache de '"$dom"' ==="; grep -rhE "ErrorLog|CustomLog" $(grep -l "ServerName.*'"$dom"'" '"$VHOSTS_GLOB"' 2>/dev/null | head -1) 2>/dev/null | sed -E "s/^[[:space:]]+//; s/\"//g"; f=$(grep -hE "ErrorLog" $(grep -l "ServerName.*'"$dom"'" '"$VHOSTS_GLOB"' 2>/dev/null | head -1) 2>/dev/null | head -1 | awk "{print \$2}" | tr -d "\""); [ -n "$f" ] && [ -f "$f" ] && tail -n '"$n"' "$f" | grep -vE "^\s*$"'
+    fi
+    ;;
+  usage)
+    dom="${1:-}"
+    [ -z "$dom" ] && { echo "Uso: kleo-infra usage <dominio>"; exit 1; }
+    if [ "$ENV" = "prod" ]; then
+      run 'doc=$(awk -v d="'"$dom"'" "
+        /^<VirtualHost/ { buf=\$0; next }
+        { buf=buf \"\n\" \$0 }
+        /<\/VirtualHost>/ {
+          if (index(buf, \"ServerName \" d) > 0) {
+            if (match(buf, /DocumentRoot[ \t]+[^ \n]+/)) { print substr(buf, RSTART+12, RLENGTH-12) }
+          }
+          buf=\"\"
+        }" '"$CONF"' | head -1)
+        echo "Docroot: ${doc:-?}"; [ -n "$doc" ] && [ -d "$doc" ] && { du -sh "$doc" 2>/dev/null; echo "=== top ==="; du -sh "$doc"/* 2>/dev/null | sort -rh | head -8; }'
+    else
+      run 'f=$(grep -l "ServerName.*'"$dom"'" '"$VHOSTS_GLOB"' 2>/dev/null | head -1); [ -z "$f" ] && { echo "vhost no encontrado"; exit 0; }; doc=$(grep DocumentRoot "$f" | head -1 | awk "{print \$2}" | tr -d "\""); echo "Docroot: $doc"; [ -n "$doc" ] && [ -d "$doc" ] && { du -sh "$doc" 2>/dev/null; du -sh "$doc"/* 2>/dev/null | sort -rh | head -8; }'
+    fi
+    ;;
+  create)
+    domain=""; docroot=""; fcgi=""; dry=""; user=""
+    while [ $# -gt 0 ]; do
+      case "$1" in
+        --domain) domain="$2"; shift 2;;
+        --docroot) docroot="$2"; shift 2;;
+        --fcgi) fcgi="$2"; shift 2;;
+        --user) user="$2"; shift 2;;
+        --dry-run) dry="1"; shift;;
+        *) echo "Arg desconocido: $1"; exit 1;;
+      esac
+    done
+    [ -z "$domain" ] && { echo "Uso: kleo-infra create --domain X --docroot RUTA [--user USUARIO] [--fcgi PUERTO] [--dry-run]"; exit 1; }
+    echo "== create vhost: $domain ($ENV) =="
+    if [ "$ENV" = "prod" ]; then
+      # cPanel: vía userdata + buildhttpdconf — NUNCA tocar httpd.conf
+      user="${user:-}"
+      [ -z "$user" ] && user=$(echo "$docroot" | sed -E 's|^/home/([^/]+)/.*|\1|')
+      [ -z "$user" ] && user=$(echo "$domain" | sed -E 's/\..*//; s/[^a-z0-9]//g')
+      [ -z "$docroot" ] && docroot="/home/$user/public_html"
+      echo "   Entorno cPanel: se usará userdata de cPanel, no edición de httpd.conf"
+      echo "   Usuario cPanel estimado: $user | Docroot: $docroot"
+      if [ -n "$dry" ]; then
+        run 'echo "--- requisitos ---"; echo "usuario existe: $([ -d /home/'"$user"' ] && echo SÍ || echo NO)"; echo "docroot existe: $([ -d '"$docroot"' ] && echo SÍ || echo NO)"; echo "dominio ya en conf: $(grep -c "ServerName '"$domain"'" '"$CONF"')"; echo "whmapi1: $(which whmapi1)"'
+        echo "   [dry-run] No se escribió nada."
+        exit 0
+      fi
+      run 'if [ ! -d /home/'"$user"' ]; then echo "ERROR: la cuenta cPanel /home/'"$user"' no existe. Cree la cuenta con WHM (whmapi1 createacct) primero."; exit 1; fi
+        udir=/etc/apache2/conf.d/userdata/std/2_4/'"$user"'/'"$domain"'
+        mkdir -p "$udir"
+        cat > "$udir/vhost.conf" <<VHOST
+# Añadido por kleo-infra (cPanel userdata) — se aplica con buildhttpdconf
+<Directory "'"$docroot"'">
+    AllowOverride All
+    Require all granted
+</Directory>
+VHOST
+        echo "userdata creado: $udir/vhost.conf"
+        echo "Regenerando httpd.conf con buildhttpdconf (mecanismo oficial de cPanel)..."
+        /usr/local/cpanel/scripts/buildhttpdconf 2>&1 | tail -3
+        httpd -t 2>&1 | tail -2
+        echo "NOTA: para dominios NUEVOS use whmapi1 (createacct/adddns). Este userdata solo ajusta la config de un dominio existente en la cuenta.'"$user"'"'
+    else
+      # Local: Apache Homebrew — crear archivo en vhosts/
+      [ -z "$docroot" ] && docroot="$HOME_BASE/home/$domain/public"
+      [ -z "$fcgi" ] && fcgi="9084"
+      vfile="$VHOSTS_DIR/$domain.conf"
+      echo "   Archivo: $vfile | Docroot: $docroot | FCGI: $fcgi"
+      if [ -n "$dry" ]; then
+        run 'echo "docroot existe: $([ -d '"$docroot"' ] && echo SÍ || echo NO)"; echo "vhost ya existe: $([ -f '"$vfile"' ] && echo SÍ || echo NO)"; echo "configtest: $(httpd -t 2>&1 | tail -1)"'
+        echo "   [dry-run] No se escribió nada."
+        exit 0
+      fi
+      run 'if [ ! -d '"$docroot"' ]; then echo "ERROR: docroot no existe: '"$docroot"'"; exit 1; fi
+        [ -f '"$vfile"' ] && cp '"$vfile"' '"$vfile"'.bak-$(date +%Y%m%d-%H%M%S)
+        cat > '"$vfile"' <<VHOST
+<VirtualHost *:80>
+    ServerName '"$domain"'
+    ServerAlias www.'"$domain"'
+    DocumentRoot "'"$docroot"'"
+
+    <Directory "'"$docroot"'">
+        Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+        DirectoryIndex index.php index.html
+    </Directory>
+
+    <FilesMatch \\.php\$>
+        SetHandler "proxy:fcgi://127.0.0.1:'"$fcgi"'"
+    </FilesMatch>
+
+    ErrorLog "'"$HOME_BASE"'/home/'"$domain"'-error.log"
+    CustomLog "'"$HOME_BASE"'/home/'"$domain"'-access.log" common
+</VirtualHost>
+VHOST
+        echo "vhost creado: '"$vfile"'"
+        httpd -t 2>&1 | tail -2'
+      run 'httpd -t >/dev/null 2>&1 && {
+        if pgrep -x httpd >/dev/null 2>&1; then
+          /opt/homebrew/bin/httpd -k graceful 2>&1 | tail -2 || true
+          echo "Apache recargado (graceful)"
+        else
+          /opt/homebrew/bin/httpd -k start 2>&1 | tail -2 || true
+          echo "Apache iniciado"
+        fi
+      } || echo "ERROR configtest — revisar el vhost (no se recargó)"'
+    fi
+    ;;
+  help|*)
+    cat <<'EOF'
+kleo-infra — Administración de infraestructura web multi-entorno
+
+ENTORNOS:
+  --env prod      server148 (cPanel) — vhosts SOLO LECTURA; create vía userdata+buildhttpdconf
+  --env macbook   este equipo (Apache Homebrew, /opt/homebrew/etc/httpd/vhosts/)
+  --env macmini   Mac mini (Apache Homebrew, /opt/homebrew/etc/httpd/vhosts/)
+
+COMANDOS (todos multi-entorno):
+  list                          Listar vhosts/dominios
+  search <texto>                Buscar vhost
+  show <dominio>                Detalle del vhost (+SSL en prod)
+  check                         configtest Apache + estado
+  folders [usuario]             Carpetas (prod: cuentas; local: ~/home)
+  logs <dominio> [n]            Últimos errores
+  usage <dominio>               Tamaño del docroot
+  create --domain X --docroot RUTA [--fcgi PUERTO] [--dry-run]
+  help                          Esta ayuda
+
+REGLAS DE SEGURIDAD:
+  • cPanel (prod): NUNCA editar /etc/apache2/conf/httpd.conf a mano.
+    Usar whmapi1/UAPI para cuentas/dominios y userdata+buildhttpdconf
+    para ajustes de config. cPanel regenera httpd.conf.
+  • Local: create escribe un archivo por dominio en vhosts/ con backup
+    automático, configtest y reload (graceful) solo si httpd -t pasa.
+
+EJEMPLOS:
+  ./kleo-infra --env prod check
+  ./kleo-infra --env prod show api.puntobot.com
+  ./kleo-infra --env macbook list
+  ./kleo-infra --env macmini create --domain demo.puntobot.test --docroot ~/home/demo/public --dry-run
+  ./kleo-infra --env prod create --domain extra.puntobot.com --dry-run
+EOF
+    ;;
+esac

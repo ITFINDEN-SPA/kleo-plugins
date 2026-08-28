@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+# kleo-collab — Desarrollo colaborativo entre los harness del Mac mini y MacBook Pro
+#
+# Sincroniza el "estado compartido" del equipo entre las dos máquinas:
+#   - Tablero de tareas (kleo-team)
+#   - Plugins del harness (kleo-*) para que ambos agentes tengan las mismas herramientas
+#   - Estado de Git de los subsistemas PuntoBot (commits compartidos)
+#
+# Modelo: el MacBook Pro es el "hub" (tiene Git + GitHub). El Mac mini replica
+# el estado compartido vía rsync y reporta sus cambios de vuelta.
+#
+# Uso: ./kleo-collab <comando>
+#   push        MacBook Pro → Mac mini (tablero + plugins + notas)
+#   pull        Mac mini → MacBook Pro (traer cambios hechos en el mini)
+#   status      Comparar estado entre máquinas
+#   init        Preparar directorios compartidos en el Mac mini
+#   help        Esta ayuda
+set -euo pipefail
+
+MINI_HOST="${MINI_HOST:-mac_mini}"
+MINI_USER="${MINI_USER:-friedrich}"
+MINI_COLLAB="${MINI_COLLAB:-/Users/friedrich/home/kleo-collab}"
+HUB_COLLAB="${HUB_COLLAB:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/collab}"
+
+PLUGINS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+cmd="${1:-help}"
+shift || true
+
+ssh_mini() {
+  ssh -o BatchMode=yes -o ConnectTimeout=10 "$MINI_HOST" "$@" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq" || true
+}
+
+case "$cmd" in
+  init)
+    echo "== Preparando directorio collab en Mac mini =="
+    ssh_mini "mkdir -p $MINI_COLLAB"
+    echo "✅ $MINI_HOST:$MINI_COLLAB listo"
+    ;;
+  push)
+    echo "== push: MacBook Pro → Mac mini =="
+    mkdir -p "$HUB_COLLAB"
+    # Tablero del equipo
+    if [ -f "$PLUGINS_DIR/kleo-team/board/tasks.tsv" ]; then
+      cp "$PLUGINS_DIR/kleo-team/board/tasks.tsv" "$HUB_COLLAB/tasks.tsv"
+      echo "  - tablero → collab/tasks.tsv"
+    fi
+    # Nota de estado generada por Kleo (si existe)
+    [ -f "$HUB_COLLAB/ESTADO.md" ] && echo "  - ESTADO.md incluido"
+    # Envío vía tar+ssh (compatible con openrsync en ambos lados)
+    tar czf - -C "$HUB_COLLAB" . | ssh -o BatchMode=yes -o ConnectTimeout=10 "$MINI_HOST" "mkdir -p '$MINI_COLLAB' && tar xzf - -C '$MINI_COLLAB'" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq" || true
+    echo "✅ push completado"
+    ;;
+  pull)
+    echo "== pull: Mac mini → MacBook Pro =="
+    mkdir -p "$HUB_COLLAB"
+    ssh -o BatchMode=yes -o ConnectTimeout=10 "$MINI_HOST" "tar czf - -C '$MINI_COLLAB' . 2>/dev/null" 2>/dev/null | tar xzf - -C "$HUB_COLLAB"
+    # Si trajo un tablero actualizado, aplicarlo
+    if [ -f "$HUB_COLLAB/tasks.tsv" ]; then
+      cp "$HUB_COLLAB/tasks.tsv" "$PLUGINS_DIR/kleo-team/board/tasks.tsv"
+      echo "  - tablero actualizado desde Mac mini"
+    fi
+    echo "✅ pull completado"
+    ;;
+  status)
+    echo "== Estado del collab en ambas máquinas =="
+    echo "--- Hub (MacBook Pro): $HUB_COLLAB ---"
+    ls -la "$HUB_COLLAB" 2>/dev/null | grep -vE "^total|^d" | head -8 || echo "  (vacío — ejecuta init/push)"
+    echo "--- Mini: $MINI_HOST:$MINI_COLLAB ---"
+    ssh_mini "ls -la '$MINI_COLLAB' 2>/dev/null | grep -vE '^total|^d' | head -8 || echo '  (vacío — ejecuta init/push)'"
+    # Comparar tableros
+    hub_hash=$(md5 -q "$HUB_COLLAB/tasks.tsv" 2>/dev/null || echo none)
+    mini_hash=$(ssh_mini "md5 -q '$MINI_COLLAB/tasks.tsv' 2>/dev/null || echo none" | tr -d '\r')
+    echo "--- Tablero: hub=$hub_hash mini=$mini_hash ---"
+    [ "$hub_hash" = "$mini_hash" ] && [ "$hub_hash" != "none" ] && echo "  ✅ Tableros sincronizados" || echo "  ⚠️  Tableros distintos (ejecuta push o pull)"
+    ;;
+  help|*)
+    cat <<'EOF'
+kleo-collab — Colaboración entre harness (Mac mini ↔ MacBook Pro)
+
+COMANDOS:
+  init      Crear dir compartido en el Mac mini
+  push      Hub → Mini (tablero + plugins + ESTADO.md)
+  pull      Mini → Hub (traer cambios y aplicarlos al tablero)
+  status    Comparar estado entre máquinas
+  help      Esta ayuda
+
+FLUJO DE TRABAJO RECOMENDADO:
+  1. Cada agente usa kleo-team en su máquina (tablero local).
+  2. kleo-collab push/pull mantiene los tableros sincronizados.
+  3. Los subsistemas PuntoBot se versionan en Git/GitHub (fuente de verdad
+     del código); el collab sincroniza el ESTADO del trabajo, no el código.
+EOF
+    ;;
+esac

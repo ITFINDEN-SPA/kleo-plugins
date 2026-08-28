@@ -1,0 +1,2537 @@
+{
+    "subsystem": "puntobotveterinaria",
+    "scanned_at": "2026-08-28T13:55:10+00:00",
+    "app_dirs": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app"
+    ],
+    "functions": [
+        {
+            "name": "show",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "show(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 12
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionContextController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionContextController.php",
+            "line": 83
+        },
+        {
+            "name": "settings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "settings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 13
+        },
+        {
+            "name": "updateSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ApiService $api"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateSettings(Request $request, ApiService $api): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 18
+        },
+        {
+            "name": "ping",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "ping(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 23
+        },
+        {
+            "name": "unlock",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "unlock(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 30
+        },
+        {
+            "name": "online",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "online(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 35
+        },
+        {
+            "name": "revoke",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$jti",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $jti"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "revoke(Request $request, string $jti): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 44
+        },
+        {
+            "name": "globalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "globalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 53
+        },
+        {
+            "name": "updateGlobalSettings",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "updateGlobalSettings(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 62
+        },
+        {
+            "name": "proxy",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "proxy(Request $request, string $method, string $endpoint, array $data = []): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 71
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSessionGuardController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+            "line": 109
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$sidebar",
+                    "type": "PuntobotSidebarService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly PuntobotSidebarService $sidebar"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(PuntobotSidebarService $sidebar)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 11
+        },
+        {
+            "name": "activeSubsystems",
+            "type": "method",
+            "class": "PuntobotSidebarController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "activeSubsystems(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSidebarController.php",
+            "line": 15
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 15
+        },
+        {
+            "name": "dashboard",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": null,
+            "signature": "dashboard(Request $request)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 19
+        },
+        {
+            "name": "patients",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": null,
+            "signature": "patients(Request $request)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 71
+        },
+        {
+            "name": "storePatient",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "storePatient(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 106
+        },
+        {
+            "name": "showPatient",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$patientId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $patientId"
+                }
+            ],
+            "return_type": null,
+            "signature": "showPatient(Request $request, int $patientId)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 144
+        },
+        {
+            "name": "appointments",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": null,
+            "signature": "appointments(Request $request)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 199
+        },
+        {
+            "name": "appointmentCalendarEvents",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "JsonResponse",
+            "signature": "appointmentCalendarEvents(Request $request): JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 257
+        },
+        {
+            "name": "searchClients",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\JsonResponse",
+            "signature": "searchClients(Request $request): \\Illuminate\\Http\\JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 286
+        },
+        {
+            "name": "clientPatients",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$clientId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $clientId"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\JsonResponse",
+            "signature": "clientPatients(Request $request, int $clientId): \\Illuminate\\Http\\JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 321
+        },
+        {
+            "name": "catalogBreeds",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\JsonResponse",
+            "signature": "catalogBreeds(Request $request): \\Illuminate\\Http\\JsonResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 347
+        },
+        {
+            "name": "storeAppointment",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "storeAppointment(Request $request): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 380
+        },
+        {
+            "name": "updateAppointment",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$appointment",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $appointment"
+                }
+            ],
+            "return_type": "RedirectResponse",
+            "signature": "updateAppointment(Request $request, int $appointment): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 482
+        },
+        {
+            "name": "appointmentFormBack",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "RedirectResponse",
+            "signature": "appointmentFormBack(): RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 584
+        },
+        {
+            "name": "clinicalRecords",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": null,
+            "signature": "clinicalRecords(Request $request)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 591
+        },
+        {
+            "name": "inventory",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": null,
+            "signature": "inventory(Request $request)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 615
+        },
+        {
+            "name": "normalizeInventoryItem",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$row",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $row"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeInventoryItem(array $row): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 645
+        },
+        {
+            "name": "formatStock",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$value",
+                    "type": "float",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "float $value"
+                },
+                {
+                    "name": "$unit",
+                    "type": "string",
+                    "default": "''",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $unit  =  ''"
+                }
+            ],
+            "return_type": "string",
+            "signature": "formatStock(float $value, string $unit = ''): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 670
+        },
+        {
+            "name": "loadCompanyData",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$loadPatients",
+                    "type": "bool",
+                    "default": "true",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " bool $loadPatients  =  true"
+                }
+            ],
+            "return_type": "array",
+            "signature": "loadCompanyData(Request $request, int $companyId, bool $loadPatients = true): array",
+            "summary": null,
+            "doc": "/** @return array{api_ok: bool, professionals: array<int, array<string, mixed>>, booking_professionals: array<int, array<string, mixed>>, patients: array<int, array<string, mixed>>, appointments: array<int, array<string, mixed>>, appointments_display: array<int, array<string, string>>, load_errors: array<string, string>} */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 678
+        },
+        {
+            "name": "extractRows",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "extractRows(array $response): array",
+            "summary": null,
+            "doc": "/** @param  array<string, mixed>  $response */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 847
+        },
+        {
+            "name": "user",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "array",
+            "signature": "user(Request $request): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 857
+        },
+        {
+            "name": "token",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "string",
+            "signature": "token(Request $request): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 862
+        },
+        {
+            "name": "activeCompany",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "array",
+            "signature": "activeCompany(Request $request): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 867
+        },
+        {
+            "name": "companyNameFromApi",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?string",
+            "signature": "companyNameFromApi(Request $request, int $companyId): ?string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 901
+        },
+        {
+            "name": "calendarTimeSlots",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "calendarTimeSlots(): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 920
+        },
+        {
+            "name": "fetchAppointmentsInRange",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$from",
+                    "type": "Carbon",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Carbon $from"
+                },
+                {
+                    "name": "$to",
+                    "type": "Carbon",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Carbon $to"
+                }
+            ],
+            "return_type": "array",
+            "signature": "fetchAppointmentsInRange(Request $request, int $companyId, string $token, Carbon $from, Carbon $to): array",
+            "summary": null,
+            "doc": "/** @return array<int, array<string, mixed>> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 932
+        },
+        {
+            "name": "buildCalendarEvents",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$rows",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $rows"
+                },
+                {
+                    "name": "$professionalFilter",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $professionalFilter  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "buildCalendarEvents(array $rows, array $professionalFilter = []): array",
+            "summary": null,
+            "doc": "/**\n     * @param  array<int, array<string, mixed>>  $rows\n     * @param  array<int, string>  $professionalFilter\n     * @return array<int, array<string, mixed>>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 953
+        },
+        {
+            "name": "calendarEventColors",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$status",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $status"
+                }
+            ],
+            "return_type": "array",
+            "signature": "calendarEventColors(string $status): array",
+            "summary": null,
+            "doc": "/** @return array{backgroundColor: string, borderColor: string} */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1016
+        },
+        {
+            "name": "timeLabel",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$value",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $value"
+                }
+            ],
+            "return_type": "string",
+            "signature": "timeLabel(string $value): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1026
+        },
+        {
+            "name": "formatDateLabel",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$value",
+                    "type": "mixed",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "mixed $value"
+                }
+            ],
+            "return_type": "string",
+            "signature": "formatDateLabel(mixed $value): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1035
+        },
+        {
+            "name": "appointmentStatus",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$status",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $status"
+                }
+            ],
+            "return_type": "string",
+            "signature": "appointmentStatus(string $status): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1048
+        },
+        {
+            "name": "dayHasSchedule",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$professional",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $professional"
+                },
+                {
+                    "name": "$dayOfWeek",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $dayOfWeek"
+                }
+            ],
+            "return_type": "bool",
+            "signature": "dayHasSchedule(array $professional, int $dayOfWeek): bool",
+            "summary": null,
+            "doc": "/** @param  array<string, mixed>  $professional */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1059
+        },
+        {
+            "name": "slotIsInsideSchedule",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$slot",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $slot"
+                },
+                {
+                    "name": "$professional",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $professional"
+                },
+                {
+                    "name": "$dayOfWeek",
+                    "type": "?int",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?int $dayOfWeek  =  null"
+                }
+            ],
+            "return_type": "bool",
+            "signature": "slotIsInsideSchedule(string $slot, array $professional, ?int $dayOfWeek = null): bool",
+            "summary": null,
+            "doc": "/** @param  array<string, mixed>  $professional */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1073
+        },
+        {
+            "name": "slotIsInsideShift",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$slot",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $slot"
+                },
+                {
+                    "name": "$shift",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $shift"
+                }
+            ],
+            "return_type": "bool",
+            "signature": "slotIsInsideShift(string $slot, string $shift): bool",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1096
+        },
+        {
+            "name": "timeToMinutes",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$time",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $time"
+                }
+            ],
+            "return_type": "int",
+            "signature": "timeToMinutes(string $time): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1109
+        },
+        {
+            "name": "resolveSelectedClient",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolveSelectedClient(Request $request, int $companyId): ?array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed>|null */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1117
+        },
+        {
+            "name": "resolveSelectedPatient",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolveSelectedPatient(Request $request, int $companyId): ?array",
+            "summary": null,
+            "doc": "/** @return array<string, mixed>|null */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1145
+        },
+        {
+            "name": "formatPatientOption",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$row",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $row"
+                }
+            ],
+            "return_type": "array",
+            "signature": "formatPatientOption(array $row): array",
+            "summary": null,
+            "doc": "/** @param  array<string, mixed>  $row */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1173
+        },
+        {
+            "name": "formatClientLabel",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$client",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $client"
+                },
+                {
+                    "name": "$fallbackOwner",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $fallbackOwner"
+                }
+            ],
+            "return_type": "string",
+            "signature": "formatClientLabel(array $client, string $fallbackOwner): string",
+            "summary": null,
+            "doc": "/** @param  array<string, mixed>  $client */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1189
+        },
+        {
+            "name": "loadActiveSpecies",
+            "type": "method",
+            "class": "VeterinariaController",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "array",
+            "signature": "loadActiveSpecies(string $token, int $companyId): array",
+            "summary": null,
+            "doc": "/** @return list<array{id:int,name:string}> */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+            "line": 1209
+        },
+        {
+            "name": "__construct",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$api",
+                    "type": "ApiService",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "private readonly ApiService $api"
+                }
+            ],
+            "return_type": null,
+            "signature": "__construct(ApiService $api)",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/AuthSSO.php",
+            "line": 17
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/AuthSSO.php",
+            "line": 21
+        },
+        {
+            "name": "redirectToLogin",
+            "type": "method",
+            "class": "AuthSSO",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "\\Illuminate\\Http\\RedirectResponse",
+            "signature": "redirectToLogin(Request $request): \\Illuminate\\Http\\RedirectResponse",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/AuthSSO.php",
+            "line": 52
+        },
+        {
+            "name": "warmPuntobotSidebar",
+            "type": "method",
+            "class": "WarmsPuntobotSidebar",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmPuntobotSidebar(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+            "line": 10
+        },
+        {
+            "name": "handle",
+            "type": "method",
+            "class": "EnsurePuntobotToken",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$next",
+                    "type": "Closure",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " Closure $next"
+                }
+            ],
+            "return_type": "Response",
+            "signature": "handle(Request $request, Closure $next): Response",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/EnsurePuntobotToken.php",
+            "line": 11
+        },
+        {
+            "name": "casts",
+            "type": "method",
+            "class": "User",
+            "namespace": "",
+            "visibility": "protected",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "casts(): array",
+            "summary": "Get the attributes that should be cast.",
+            "doc": "/**\n     * Get the attributes that should be cast.\n     *\n     * @return array<string, string>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Models/User.php",
+            "line": 25
+        },
+        {
+            "name": "register",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "register(): void",
+            "summary": "Register any application services.",
+            "doc": "/**\n     * Register any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Providers/AppServiceProvider.php",
+            "line": 12
+        },
+        {
+            "name": "boot",
+            "type": "method",
+            "class": "AppServiceProvider",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "void",
+            "signature": "boot(): void",
+            "summary": "Bootstrap any application services.",
+            "doc": "/**\n     * Bootstrap any application services.\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Providers/AppServiceProvider.php",
+            "line": 20
+        },
+        {
+            "name": "getCurrentUser",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "getCurrentUser(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 11
+        },
+        {
+            "name": "logout",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                }
+            ],
+            "return_type": "array",
+            "signature": "logout(string $token): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 16
+        },
+        {
+            "name": "get",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$query",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $query  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "get(string $endpoint, string $token, array $query = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 21
+        },
+        {
+            "name": "post",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "post(string $endpoint, string $token, array $payload = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 26
+        },
+        {
+            "name": "patch",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                },
+                {
+                    "name": "$payload",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $payload  =  []"
+                }
+            ],
+            "return_type": "array",
+            "signature": "patch(string $endpoint, string $token, array $payload = []): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 31
+        },
+        {
+            "name": "errorMessage",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "string",
+            "signature": "errorMessage(array $response): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 36
+        },
+        {
+            "name": "extractUser",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "array $response"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "extractUser(array $response): ?array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 55
+        },
+        {
+            "name": "authRequest",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "authRequest(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 64
+        },
+        {
+            "name": "apiRequest",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$method",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $method"
+                },
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $endpoint"
+                },
+                {
+                    "name": "$data",
+                    "type": "array",
+                    "default": "[]",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $data  =  []"
+                },
+                {
+                    "name": "$token",
+                    "type": "?string",
+                    "default": "null",
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " ?string $token  =  null"
+                }
+            ],
+            "return_type": "array",
+            "signature": "apiRequest(string $method, string $endpoint, array $data = [], ?string $token = null): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 92
+        },
+        {
+            "name": "authUrl",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "authUrl(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 120
+        },
+        {
+            "name": "apiUrl",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$endpoint",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $endpoint"
+                }
+            ],
+            "return_type": "string",
+            "signature": "apiUrl(string $endpoint): string",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 125
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 133
+        },
+        {
+            "name": "normalizeResponse",
+            "type": "method",
+            "class": "ApiService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$response",
+                    "type": "Response",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Response $response"
+                }
+            ],
+            "return_type": "array",
+            "signature": "normalizeResponse(Response $response): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+            "line": 151
+        },
+        {
+            "name": "getFromSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "getFromSession(Request $request): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 18
+        },
+        {
+            "name": "warmSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "void",
+            "signature": "warmSession(Request $request, string $token): void",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 40
+        },
+        {
+            "name": "resolvePayload",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " string $token"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "resolvePayload(Request $request, string $token): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array{subsistemas: array<int, array<string, mixed>>}|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 59
+        },
+        {
+            "name": "fallbackItems",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "public",
+            "static": false,
+            "abstract": false,
+            "params": [],
+            "return_type": "array",
+            "signature": "fallbackItems(): array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 82
+        },
+        {
+            "name": "storeInSession",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                },
+                {
+                    "name": "$items",
+                    "type": "array",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " array $items"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "void",
+            "signature": "storeInSession(Request $request, array $items, int $companyId): void",
+            "summary": null,
+            "doc": "/**\n     * @param array<int, array<string, mixed>> $items\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 90
+        },
+        {
+            "name": "resolveCompanyId",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$request",
+                    "type": "Request",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "Request $request"
+                }
+            ],
+            "return_type": "int",
+            "signature": "resolveCompanyId(Request $request): int",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 99
+        },
+        {
+            "name": "fetchFromApi",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$token",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $token"
+                },
+                {
+                    "name": "$companyId",
+                    "type": "int",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": " int $companyId"
+                }
+            ],
+            "return_type": "?array",
+            "signature": "fetchFromApi(string $token, int $companyId): ?array",
+            "summary": null,
+            "doc": "/**\n     * @return array<int, array<string, mixed>>|null\n     */",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 109
+        },
+        {
+            "name": "localResolveOptions",
+            "type": "method",
+            "class": "PuntobotSidebarService",
+            "namespace": "",
+            "visibility": "private",
+            "static": false,
+            "abstract": false,
+            "params": [
+                {
+                    "name": "$url",
+                    "type": "string",
+                    "default": null,
+                    "byref": false,
+                    "variadic": false,
+                    "raw": "string $url"
+                }
+            ],
+            "return_type": "array",
+            "signature": "localResolveOptions(string $url): array",
+            "summary": null,
+            "doc": null,
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php",
+            "line": 145
+        }
+    ],
+    "classes": [
+        "Controller",
+        "PuntobotSessionContextController",
+        "PuntobotSessionGuardController",
+        "PuntobotSidebarController",
+        "VeterinariaController",
+        "AuthSSO",
+        "WarmsPuntobotSidebar",
+        "EnsurePuntobotToken",
+        "User",
+        "AppServiceProvider",
+        "ApiService",
+        "PuntobotSidebarService"
+    ],
+    "routes": [
+        {
+            "method": "GET",
+            "uri": "/__preview/veterinaria",
+            "action": "VeterinariaController::class, 'dashboard'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/__preview/veterinaria/citas",
+            "action": "VeterinariaController::class, 'appointments'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/",
+            "action": "VeterinariaController::class, 'dashboard'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/pacientes",
+            "action": "VeterinariaController::class, 'patients'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/pacientes/{patient}",
+            "action": "VeterinariaController::class, 'showPatient'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/pacientes",
+            "action": "VeterinariaController::class, 'storePatient'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/clientes/buscar",
+            "action": "VeterinariaController::class, 'searchClients'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/clientes/{clientId}/pacientes",
+            "action": "VeterinariaController::class, 'clientPatients'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/catalogo/razas",
+            "action": "VeterinariaController::class, 'catalogBreeds'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/citas",
+            "action": "VeterinariaController::class, 'appointments'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/citas/eventos",
+            "action": "VeterinariaController::class, 'appointmentCalendarEvents'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/citas/clientes/{clientId}/pacientes",
+            "action": "VeterinariaController::class, 'clientPatients'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/citas",
+            "action": "VeterinariaController::class, 'storeAppointment'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "PATCH",
+            "uri": "/citas/{appointment}",
+            "action": "VeterinariaController::class, 'updateAppointment'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/fichas-clinicas",
+            "action": "VeterinariaController::class, 'clinicalRecords'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/inventario",
+            "action": "VeterinariaController::class, 'inventory'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/subsistemas/activos",
+            "action": "\\App\\Http\\Controllers\\PuntobotSidebarController::class, 'activeSubsystems'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session-context",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionContextController::class, 'show'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "GET",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'settings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "PUT",
+            "uri": "/puntobot/session/settings",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'updateSettings'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/ping",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'ping'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        },
+        {
+            "method": "POST",
+            "uri": "/puntobot/session/unlock",
+            "action": "\\App\\Http\\Controllers\\PuntobotSessionGuardController::class, 'unlock'",
+            "file": "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/routes/web.php"
+        }
+    ],
+    "files": [
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/Controller.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionContextController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSessionGuardController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/PuntobotSidebarController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Controllers/VeterinariaController.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/AuthSSO.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/Concerns/WarmsPuntobotSidebar.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Http/Middleware/EnsurePuntobotToken.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Models/User.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Providers/AppServiceProvider.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/ApiService.php",
+        "/Users/friedrichvonmuhlenbrock/home/puntobotveterinaria/laravel/app/Services/PuntobotSidebarService.php"
+    ],
+    "function_count": 82,
+    "route_count": 22
+}

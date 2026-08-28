@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+# kleo-prd-sync — Despliega código QA/Dev → Producción (server148)
+#
+# Uso: ./kleo-prd-sync <subsistema> [--migrate] [--dry-run]
+#   sincroniza ~/home/<subsistema>/public_html (Dev, este equipo) → server148:/home/<usuario>/public_html (Prod)
+#
+# Excluye: vendor/, node_modules/, .env*, storage/, logs/, backups/, .git
+# Opciones:
+#   --migrate   ejecuta php artisan migrate --force en producción tras el rsync
+#   --dry-run   muestra qué se copiaría sin tocar nada
+set -euo pipefail
+
+DEV_ROOT="${DEV_ROOT:-$HOME/home}"
+PRD_HOST="${PRD_HOST:-vps148.itfinden.com}"
+PRD_ROOT="/home"
+
+EXCLUDES=(--exclude=vendor --exclude=node_modules --exclude=.env --exclude=.env.* --exclude=storage/framework --exclude=storage/logs --exclude=logs --exclude=backups --exclude=.git --exclude=tmp --exclude=mail)
+
+sub="${1:-}"
+shift || true
+MIGRATE=0
+DRY=""
+for a in "$@"; do
+  case "$a" in
+    --migrate) MIGRATE=1;;
+    --dry-run) DRY="--dry-run";;
+  esac
+done
+
+[ -z "$sub" ] && { echo "Uso: kleo-prd-sync <subsistema> [--migrate] [--dry-run]"; echo "  ej: kleo-prd-sync puntobotcrm --migrate"; exit 1; }
+
+SRC="$DEV_ROOT/$sub/public_html"
+[ -d "$SRC" ] || { echo "ERROR: no existe $SRC"; exit 1; }
+
+# El usuario cPanel en prod es el nombre del subsistema (puntobotapi, puntobotcrm, ...)
+user="$sub"
+PRD_PATH="$PRD_ROOT/$user/public_html"
+
+echo "== kleo-prd-sync: $sub → PRODUCCIÓN =="
+echo "   $SRC → $PRD_HOST:$PRD_PATH"
+echo "   ⚠️  Este comando MODIFICA PRODUCCIÓN. Verificar antes de ejecutar."
+
+# Backup rápido del estado actual en prod (tar del app/ y routes/)
+BACKUP_TAG="$(date +%Y%m%d-%H%M%S)"
+echo "== Backup pre-deploy =="
+ssh -o BatchMode=yes -o ConnectTimeout=10 "$PRD_HOST" "mkdir -p /home/$user/backups/deploy-$BACKUP_TAG && tar czf /home/$user/backups/deploy-$BACKUP_TAG/app.tar.gz -C $PRD_PATH app routes database 2>/dev/null && echo 'Backup: /home/$user/backups/deploy-$BACKUP_TAG/app.tar.gz'" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq"
+
+if [ -n "$DRY" ]; then
+    rsync -avz --dry-run --delete "${EXCLUDES[@]}" -e ssh "$SRC/" "$PRD_HOST:$PRD_PATH/" 2>&1 | grep -v "WARNING\|post-quantum" | tail -25
+    echo "[dry-run] No se desplegó nada."
+    exit 0
+fi
+
+echo "== rsync → producción =="
+rsync -avz --delete "${EXCLUDES[@]}" -e ssh "$SRC/" "$PRD_HOST:$PRD_PATH/" 2>&1 | grep -v "WARNING\|post-quantum" | tail -15
+
+if [ "$MIGRATE" = "1" ]; then
+    echo "== artisan migrate --force =="
+    ssh -o BatchMode=yes -o ConnectTimeout=10 "$PRD_HOST" "cd $PRD_PATH && php artisan migrate --force 2>&1 | tail -10" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq"
+fi
+
+echo "== Cache + verificación =="
+ssh -o BatchMode=yes -o ConnectTimeout=10 "$PRD_HOST" "cd $PRD_PATH && php artisan config:clear 2>/dev/null; php artisan cache:clear 2>/dev/null; php artisan view:clear 2>/dev/null; echo '--- checks ---'; ls -la app/Http/Controllers/ | head -3; curl -sI --max-time 5 https://crm.puntobot.com 2>/dev/null | head -3 || echo '(curl no disponible)'" 2>&1 | grep -v "WARNING\|post-quantum\|store now\|upgraded\|openssh.com/pq"
+
+echo "== Backup de este deploy: /home/$user/backups/deploy-$BACKUP_TAG/ =="

@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+# kleo-team — Gestión de equipos de trabajo para el ecosistema PuntoBot
+#
+# Coordina tareas de desarrollo entre los miembros del equipo (agentes Kleo,
+# desarrolladores) con un tablero de trabajo simple en disco + Git.
+#
+# Uso: ./kleo-team <comando> [args...]
+#   init                    Crear el tablero del equipo
+#   status                  Estado actual del tablero
+#   add --title "X" [--assign NOMBRE] [--prio alta|media|baja] [--scope ruta]
+#                           Añadir tarea
+#   list [--status pendiente|en-progreso|hecho] [--assign NOMBRE]
+#                           Listar tareas
+#   start <id> [NOMBRE]     Marcar en progreso (asigna a NOMBRE si se da)
+#   done <id>               Marcar completada
+#   todo                    Próxima tarea pendiente recomendada
+#   report                  Resumen del equipo (por persona y estado)
+#   help                    Esta ayuda
+set -euo pipefail
+
+BOARD="${TEAM_BOARD:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/board}"
+BOARD_FILE="$BOARD/tasks.tsv"
+MEMBERS_FILE="$BOARD/members.tsv"
+
+mkdir -p "$BOARD"
+
+cmd="${1:-help}"
+shift || true
+
+tsv() { printf '%s\n' "$@"; }
+
+case "$cmd" in
+  init)
+    [ -f "$BOARD_FILE" ] && { echo "El tablero ya existe: $BOARD_FILE"; exit 0; }
+    tsv "id	status	title	assignee	prio	scope	created" > "$BOARD_FILE"
+    echo "✅ Tablero creado: $BOARD_FILE"
+    echo "   (respaldado en Git cuando kleo-collab esté activo)"
+    ;;
+  status)
+    [ -f "$BOARD_FILE" ] || { echo "Tablero no inicializado. Ejecuta: kleo-team init"; exit 1; }
+    total=$(tail -n +2 "$BOARD_FILE" | wc -l | tr -d ' ')
+    pend=$(tail -n +2 "$BOARD_FILE" | awk -F'\t' '$2=="pendiente"' | wc -l | tr -d ' ')
+    prog=$(tail -n +2 "$BOARD_FILE" | awk -F'\t' '$2=="en-progreso"' | wc -l | tr -d ' ')
+    done_n=$(tail -n +2 "$BOARD_FILE" | awk -F'\t' '$2=="hecho"' | wc -l | tr -d ' ')
+    echo "Tablero del equipo: $total tareas | pendientes: $pend | en progreso: $prog | hechas: $done_n"
+    ;;
+  add)
+    title=""; assign=""; prio="media"; scope=""
+    while [ $# -gt 0 ]; do
+      case "$1" in
+        --title) title="$2"; shift 2;;
+        --assign) assign="$2"; shift 2;;
+        --prio) prio="$2"; shift 2;;
+        --scope) scope="$2"; shift 2;;
+        *) echo "Arg desconocido: $1"; exit 1;;
+      esac
+    done
+    [ -z "$title" ] && { echo "Uso: kleo-team add --title \"X\" [--assign N] [--prio alta|media|baja] [--scope ruta]"; exit 1; }
+    [ -f "$BOARD_FILE" ] || { echo "Tablero no inicializado. Ejecuta: kleo-team init"; exit 1; }
+    id=$(tail -n +2 "$BOARD_FILE" | wc -l | tr -d ' ')
+    id=$((id+1))
+    printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$id" "pendiente" "$title" "${assign:-}" "$prio" "${scope:-}" "$(date +%Y-%m-%d)" >> "$BOARD_FILE"
+    echo "✅ Tarea #$id añadida: $title (prio: $prio)"
+    ;;
+  list)
+    [ -f "$BOARD_FILE" ] || { echo "Tablero no inicializado. Ejecuta: kleo-team init"; exit 1; }
+    st=""; asg=""
+    while [ $# -gt 0 ]; do
+      case "$1" in
+        --status) st="$2"; shift 2;;
+        --assign) asg="$2"; shift 2;;
+        *) shift;;
+      esac
+    done
+    echo "ID	ESTADO	PRIO	ASIGNADO	ALCANCE	TÍTULO"
+    tail -n +2 "$BOARD_FILE" | awk -F'\t' -v st="$st" -v asg="$asg" '
+      (st=="" || $2==st) && (asg=="" || $4==asg) { printf "%s\t%s\t%s\t%s\t%s\t%s\n", $1, $2, $5, ($4==""?"—":$4), ($6==""?"—":$6), $3 }'
+    ;;
+  start)
+    id="${1:-}"; who="${2:-}"
+    [ -z "$id" ] && { echo "Uso: kleo-team start <id> [NOMBRE]"; exit 1; }
+    awk -F'\t' -v id="$id" -v who="$who" -v now="$(date +%Y-%m-%d)" '
+      BEGIN{OFS="\t"}
+      NR==1{print; next}
+      $1==id { $2="en-progreso"; if (who!="") $4=who; print; next }
+      {print}
+    ' "$BOARD_FILE" > "$BOARD_FILE.tmp" && mv "$BOARD_FILE.tmp" "$BOARD_FILE"
+    echo "✅ Tarea #$id en progreso${who:+ (asignada a $who)}"
+    ;;
+  done)
+    id="${1:-}"
+    [ -z "$id" ] && { echo "Uso: kleo-team done <id>"; exit 1; }
+    awk -F'\t' -v id="$id" '
+      BEGIN{OFS="\t"}
+      NR==1{print; next}
+      $1==id { $2="hecho"; print; next }
+      {print}
+    ' "$BOARD_FILE" > "$BOARD_FILE.tmp" && mv "$BOARD_FILE.tmp" "$BOARD_FILE"
+    echo "✅ Tarea #$id completada"
+    ;;
+  todo)
+    [ -f "$BOARD_FILE" ] || { echo "Tablero no inicializado. Ejecuta: kleo-team init"; exit 1; }
+    tail -n +2 "$BOARD_FILE" | awk -F'\t' '
+      $2=="pendiente" { print $1"\t"$5"\t"$4"\t"$3 }
+    ' | sort -t$'\t' -k2 | head -3 | while IFS=$'\t' read -r id prio who title; do
+      echo "#$id [$prio] ${who:+($who) }— $title"
+    done
+    ;;
+  report)
+    [ -f "$BOARD_FILE" ] || { echo "Tablero no inicializado. Ejecuta: kleo-team init"; exit 1; }
+    echo "=== Resumen por estado ==="
+    tail -n +2 "$BOARD_FILE" | awk -F'\t' '{c[$2]++} END {for (s in c) print "  " s ": " c[s]}' | sort
+    echo "=== Resumen por persona ==="
+    tail -n +2 "$BOARD_FILE" | awk -F'\t' '$4!="" {c[$4]++} END {for (p in c) print "  " p ": " c[p]}' | sort
+    ;;
+  help|*)
+    cat <<'EOF'
+kleo-team — Gestión de equipos para el ecosistema PuntoBot
+
+COMANDOS:
+  init                          Crear tablero
+  status                        Resumen del tablero
+  add --title "X" [--assign N] [--prio alta|media|baja] [--scope ruta]
+  list [--status E] [--assign N]
+  start <id> [NOMBRE]           Marcar en progreso
+  done <id>                     Completar
+  todo                          Próxima tarea pendiente
+  report                        Resumen por persona/estado
+  help                          Esta ayuda
+
+El tablero vive en ~/.kleo-team/tasks.tsv y se integra con kleo-collab
+para sincronizarse entre los harness del Mac mini y el MacBook Pro.
+EOF
+    ;;
+esac

@@ -1,0 +1,7 @@
+# Índices generados por kleo-funlib (se regeneran con: kleo-funlib build)
+kleo-funlib/index/
+# Artefactos del sistema
+.DS_Store
+*.log
+# Tablero local del equipo (se sincroniza vía kleo-collab, no por git)
+kleo-team/board/
