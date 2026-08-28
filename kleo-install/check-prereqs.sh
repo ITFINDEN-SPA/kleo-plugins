@@ -76,7 +76,12 @@ check "9. Acceso red a GitHub" \
   "revisar conexión / VPN / proxy" \
   ""
 
-check "10. Acceso al harness privado (itfinden/KLEO-Hardness)" \
+check "10. php (para kleo-funlib)" \
+  "command -v php" \
+  "brew install php" \
+  "requerido por kleo-funlib (indexado de funciones)"
+
+check "11. Acceso al harness privado (itfinden/KLEO-Hardness)" \
   "git ls-remote https://github.com/itfinden/KLEO-Hardness.git HEAD >/dev/null 2>&1" \
   "gh auth login   (como itfinden, o pedir acceso a itfinden: repos → Settings → Collaborators)" \
   "el repo es PRIVADO; tu cuenta debe estar invitada"
@@ -119,6 +124,12 @@ else
         ;;
       "9. Acceso red a GitHub")
         echo "  [$n] revisar conexión a internet (ping github.com)"
+        ;;
+      "10. php (para kleo-funlib)")
+        echo "  [$n] brew install php"
+        ;;
+      "11. Acceso al harness privado (itfinden/KLEO-Hardness)")
+        echo "  [$n] gh auth login  (cuenta itfinden) o aceptar invitación a KLEO-Hardness"
         ;;
     esac
     n=$((n+1))

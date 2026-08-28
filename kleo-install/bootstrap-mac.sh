@@ -84,6 +84,15 @@ else
   echo "  ✅ gh instalado"
 fi
 
+# ---------- 3b. php (para kleo-funlib) ----------
+echo "  php (para kleo-funlib)..."
+if command -v php >/dev/null 2>&1; then
+  echo "  ✅ php: $(php --version | head -1)"
+else
+  brew install php 2>&1 | tail -2
+  echo "  ✅ php instalado"
+fi
+
 # ---------- 4. Autenticación GitHub ----------
 echo ""
 echo "== 4/5 Autenticación GitHub (cuenta itfinden) =="
