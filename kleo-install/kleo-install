@@ -18,7 +18,13 @@ set -euo pipefail
 HARNESS_REPO="https://github.com/itfinden/KLEO-Hardness.git"
 PLUGINS_REPO="https://github.com/ITFINDEN-SPA/kleo-plugins.git"
 MCP_REPO="https://github.com/ITFINDEN-SPA/kleo-mcp-whmcs.git"
-DEFAULT_DIR="$HOME/home/AI-STORE/KSH/KLEO_HARNESS"
+# Convención de ruta: KLEO_HARNESS (sin espacios). Detecta la instalación existente
+# si se ejecuta desde dentro del harness (p. ej. el MacBook Pro usa "KLEO HARNESS").
+if [ -d "$HOME/home/AI-STORE/KSH/KLEO HARNESS/.git" ]; then
+  DEFAULT_DIR="$HOME/home/AI-STORE/KSH/KLEO HARNESS"
+else
+  DEFAULT_DIR="$HOME/home/AI-STORE/KSH/KLEO_HARNESS"
+fi
 BRANCH="fork/kleo-rebrand"
 
 DIR="$DEFAULT_DIR"; INSTALL_DEPS=0; CHECK=0
